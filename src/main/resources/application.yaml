@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: tourApp
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/tourDB
+    username: user
+    password: user
+    driver-class-name: org.postgresql.Driver
+
+  sql:
+    init:
+      mode: ALWAYS
+      schema-locations:
+        - 'classpath:shema.sql'
+        - 'classpath:triggers.sql'
+      encoding: 'UTF-8'
+
