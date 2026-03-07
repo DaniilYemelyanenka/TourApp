@@ -4,11 +4,12 @@ import by.sysoev.tourApp.entity.Passenger;
 import by.sysoev.tourApp.repository.BookingRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
+@Repository
 @RequiredArgsConstructor
 public class BookingRepositoryImpl implements BookingRepository {
 
