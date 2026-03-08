@@ -3,12 +3,14 @@ package by.sysoev.tourApp.repository.impl;
 import by.sysoev.tourApp.DTO.*;
 import by.sysoev.tourApp.repository.TourRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
+@Slf4j
 @Repository
 @RequiredArgsConstructor
 public class TourRepositoryImpl implements TourRepository {
@@ -37,6 +39,9 @@ public class TourRepositoryImpl implements TourRepository {
                 JOIN transport tr ON t.transport id = tr.id   
                 WHERE t.id = ?;
                 """;
+
+        log.debug("Select  full tour information by tour id");
+
         TourDTO tour = jdbcTemplate.queryForObject(sql, (rs,rowNum) ->
             new TourDTO(
                     rs.getString("tour_name"),
@@ -64,6 +69,8 @@ public class TourRepositoryImpl implements TourRepository {
                 ORDER BY total_bookings DESC;
                 """;
 
+        log.debug("Select tours and they bookings stats");
+
         return jdbcTemplate.query(sql,(rs,rowNum) -> new TourBookingStatsDTO(
                 rs.getString("tour_name"),
                 rs.getInt("total_bookings")
@@ -84,6 +91,7 @@ public class TourRepositoryImpl implements TourRepository {
                 ORDER BY avg_rating DESC;
                 """;
 
+        log.debug("select tour  names with they reviews");
 
         return jdbcTemplate.query(sql,(rs,rowNum) -> new TourReviewDTO(
                 rs.getString("tour_name"),
@@ -105,6 +113,8 @@ public class TourRepositoryImpl implements TourRepository {
                 ORDER BY t.name;
                 """;
 
+        log.debug("Select tours and they services (services aggregates to one line by separator)");
+
         return jdbcTemplate.query(sql,(rs,rowNum) -> new TourServicesDTO(
                 rs.getString("tour_name"),
                 rs.getString("services")
@@ -124,6 +134,8 @@ public class TourRepositoryImpl implements TourRepository {
                 ORDER BY popularity_rank
                 LIMIT 3; 
                 """;
+
+        log.debug("Select top tours by bookings limit 3");
 
         return jdbcTemplate.query(sql,(rs,rowNum) -> new TopTourDTO(
                 rs.getString("tour_name"),

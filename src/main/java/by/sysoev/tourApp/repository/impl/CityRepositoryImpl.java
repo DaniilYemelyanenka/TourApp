@@ -3,11 +3,13 @@ package by.sysoev.tourApp.repository.impl;
 import by.sysoev.tourApp.DTO.MostPopularCityDTO;
 import by.sysoev.tourApp.repository.CityRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Slf4j
 @Repository
 @RequiredArgsConstructor
 public class CityRepositoryImpl implements CityRepository{
@@ -30,6 +32,7 @@ public class CityRepositoryImpl implements CityRepository{
                 LIMIT 5;
                 """;
 
+        log.debug("Select most popular cities");
         return jdbcTemplate.query(sql,(rs,rowNum) -> new MostPopularCityDTO(
                 rs.getString("city_name"),
                 rs.getInt("bookings_count")

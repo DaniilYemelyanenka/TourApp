@@ -3,11 +3,13 @@ package by.sysoev.tourApp.repository.impl;
 import by.sysoev.tourApp.DTO.TourOperatorStatsDTO;
 import by.sysoev.tourApp.repository.TourOperatorRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Slf4j
 @Repository
 @RequiredArgsConstructor
 public class TourOperatorRepositoryImpl implements TourOperatorRepository {
@@ -31,6 +33,8 @@ public class TourOperatorRepositoryImpl implements TourOperatorRepository {
                GROUP BY top.company_name
                ORDER BY total_revenue DESC;
                """;
+
+        log.debug("Select statistic for tours and tour operators.");
 
         return jdbcTemplate.query(sql,(rs,rowNum) -> new TourOperatorStatsDTO(
                 rs.getString("company_name"),

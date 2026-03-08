@@ -1,10 +1,12 @@
 package by.sysoev.tourApp.service;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 
+@Slf4j
 @Service
 public class DatabaseBackupService {
 
@@ -24,8 +26,9 @@ public class DatabaseBackupService {
          processBuilder.environment().put("PGPASSWORD", "user");
 
          Process process = processBuilder.start();
+         log.info("Starting backup database  at");
          process.waitFor();
 
-         //TODO log Baackup created
+         log.info("Successful creating backup to database");
     }
 }

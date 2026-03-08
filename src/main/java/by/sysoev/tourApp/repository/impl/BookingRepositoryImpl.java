@@ -4,12 +4,14 @@ import by.sysoev.tourApp.DTO.BookingSeatsStatsDTO;
 import by.sysoev.tourApp.entity.Passenger;
 import by.sysoev.tourApp.repository.BookingRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Slf4j
 @Repository
 @RequiredArgsConstructor
 public class BookingRepositoryImpl implements BookingRepository {
@@ -18,7 +20,7 @@ public class BookingRepositoryImpl implements BookingRepository {
 
     @Override
     public Long addBooking(Long tourSchedule,Long userID,Double priceAtBooking) {
-
+        log.debug("Insert booking for user with id:{} and tour schedule with id:{}",userID,tourSchedule);
         return jdbcTemplate.queryForObject("""
                    INSERT INTO bookings
                    (tour_schedule_id,user_id,price_at_booking) VALUES (?,?,?)
@@ -30,7 +32,7 @@ public class BookingRepositoryImpl implements BookingRepository {
 
     @Override
     public void addBookingPassengers(Long bookingId, List<Passenger> passengers) {
-
+    log.debug("Insert booking passengers for booking with id:{}", bookingId);
         jdbcTemplate.batchUpdate("""
                 INSERT INTO booking_passengers (booking_id,first_name,last_name)
                 VALUES (?,?,?) 
@@ -57,7 +59,7 @@ public class BookingRepositoryImpl implements BookingRepository {
                ORDER BY ts.sstart_date;
                """;
 
-
+        log.debug("Select booking seats stats");
         return jdbcTemplate.query(sql,(rs,rowNum) -> new BookingSeatsStatsDTO(
                 rs.getString("tour_name"),
                 rs.getDate("start_date"),

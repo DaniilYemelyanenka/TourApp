@@ -4,11 +4,13 @@ import by.sysoev.tourApp.DTO.LastBookingUsersDTO;
 import by.sysoev.tourApp.DTO.PaymentsStatsDTO;
 import by.sysoev.tourApp.repository.ClientRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Slf4j
 @Repository
 @RequiredArgsConstructor
 public class ClientRepositoryImpl implements ClientRepository {
@@ -32,6 +34,7 @@ public class ClientRepositoryImpl implements ClientRepository {
                 ORDER BY total_spend DESC;
                 """;
 
+        log.debug("Select payments statistic.");
 
         return jdbcTemplate.query(sql,(rs,rowNum) -> new PaymentsStatsDTO(
                 rs.getString("first_name"),
@@ -59,6 +62,9 @@ public class ClientRepositoryImpl implements ClientRepository {
                 JOIN users u ON u.id = lb.user_id
                 ORDER BY lb.last_booking_date DESC;
                 """;
+
+        log.debug("Select last bookings for users.");
+
         return jdbcTemplate.query(sql,(rs,rowNum) -> new LastBookingUsersDTO(
                 rs.getString("first_name"),
                 rs.getString("last_name"),
