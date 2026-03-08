@@ -29,14 +29,14 @@ public class TourRepositoryImpl implements TourRepository {
                     c.name AS climate_name,
                     h.name AS hotel_name,
                     h.stars,
-                    tt.type AS tour_type
-                    ts.name AS transport_name
+                    tt.type AS tour_type,
+                    tr.name AS transport_name
                 FROM tours t
                 JOIN hotels h ON t.hotel_id = h.id
-                JOIN locations l ON t.location_id = l.id
+                JOIN locations l ON h.location_id = l.id
                 JOIN climats c ON l.climate_id = c.id
                 JOIN tour_types tt ON t.tour_type_id = tt.id
-                JOIN transport tr ON t.transport id = tr.id   
+                JOIN transport tr ON t.transport_id = tr.id   
                 WHERE t.id = ?;
                 """;
 
@@ -63,7 +63,7 @@ public class TourRepositoryImpl implements TourRepository {
                     t.name AS tour_name,
                     COUNT(b.id) AS total_bookings
                 FROM tours t
-                JOIN tour_schedule ON t.id = ts.tour_id
+                JOIN tour_schedule ts ON t.id = ts.tour_id
                 JOIN bookings b ON ts.id = b.tour_schedule_id
                 GROUP BY t.name
                 ORDER BY total_bookings DESC;
@@ -84,7 +84,7 @@ public class TourRepositoryImpl implements TourRepository {
                 SELECT 
                     t.name AS tour_name,
                     COUNT(tr.id) AS tour_reviews,
-                    AVG(tr.tour_mark) AS avg_rating
+                    AVG(tr.mark) AS avg_rating
                 FROM tours t
                 LEFT JOIN tour_reviews tr ON t.id =  tr.tour_id
                 GROUP BY t.name
@@ -124,15 +124,23 @@ public class TourRepositoryImpl implements TourRepository {
     @Override
     public List<TopTourDTO> getTop3Tours() {
         String sql  = """
-                SELECT 
-                    t.name AS tour_name,
-                    COUNT(b.id) AS booking_count,
-                    RANK() OVER (ORDER BY (b.id) DESC) AS popularity_rank
-                FROM tours t
-                JOIN bookings b ON t.id = b.tour_id
-                GROUP BY t.name
+                WITH tour_counts AS (
+                    SELECT
+                        t.id,
+                        t.name AS tour_name,
+                        COUNT(b.id) AS booking_count
+                    FROM tours t
+                    JOIN tour_schedule ts ON t.id = ts.tour_id
+                    JOIN bookings b ON ts.id = b.tour_schedule_id
+                    GROUP BY t.id, t.name
+                )
+                SELECT
+                    tour_name,
+                    booking_count,
+                    RANK() OVER (ORDER BY booking_count DESC) AS popularity_rank
+                FROM tour_counts
                 ORDER BY popularity_rank
-                LIMIT 3; 
+                LIMIT 3;
                 """;
 
         log.debug("Select top tours by bookings limit 3");

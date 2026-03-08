@@ -19,17 +19,17 @@ public class TourOperatorRepositoryImpl implements TourOperatorRepository {
     @Override
     public List<TourOperatorStatsDTO> getTourOperatorsStats() {
         String sql = """
-                SELECT
+               SELECT
                     top.company_name,
                     COUNT(DISTINCT t.id) AS tours_count,
-                    COUNT(DISTINCT b.ib) AS bookings_count,
+                    COUNT(DISTINCT b.id) AS bookings_count,
                     SUM(p.amount) AS total_revenue,
                     AVG(p.amount) AS avg_payment
-               FROM tour_operator_profile top
-               JOIN tour t ON top.id = t.tour_operator_profile
+               FROM tour_operator_profiles top
+               JOIN tours t ON top.id = t.tour_operator_id
                JOIN tour_schedule ts ON t.id = ts.tour_id
-               JOIN bookings b ON ts.id = b.tur_schedule_id
-               JOOIN payments p ON b.id = p.booking_id
+               JOIN bookings b ON ts.id = b.tour_schedule_id
+               JOIN payments p ON b.id = p.booking_id
                GROUP BY top.company_name
                ORDER BY total_revenue DESC;
                """;

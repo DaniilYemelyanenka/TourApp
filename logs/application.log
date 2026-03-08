@@ -17,3 +17,536 @@
 2026-03-08 17:45:59 [tomcat-shutdown] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
 2026-03-08 17:45:59 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 2026-03-08 17:45:59 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-08 22:18:23 [main] INFO  b.sysoev.tourApp.TourAppApplication - Starting TourAppApplication using Java 17.0.14 with PID 45385 (/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main started by whitesmurf in /Users/whitesmurf/Desktop/projects/tourApp)
+2026-03-08 22:18:23 [main] INFO  b.sysoev.tourApp.TourAppApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-08 22:18:24 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-08 22:18:24 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-08 22:18:24 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-08 22:18:24 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-08 22:18:24 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@e29f4f6
+2026-03-08 22:18:24 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-08 22:18:24 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-03-08 22:18:24 [main] INFO  b.sysoev.tourApp.TourAppApplication - Started TourAppApplication in 1.269 seconds (process running for 1.429)
+2026-03-08 22:21:43 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-08 22:22:18 [http-nio-8080-exec-3] INFO  b.s.t.controller.BookingController - Request for booking seats stats
+2026-03-08 22:22:18 [http-nio-8080-exec-3] ERROR b.s.t.G.GlobalExceptionHandler - something was wrong with message StatementCallback; bad SQL grammar [ SELECT
+     t.name AS tour_name,
+     ts.start_date,
+     ts.capacity,
+     COUNT(bp.id) AS booked_places
+     ts.capacity - COUNT(bp.id) AS available_places
+FROM tour_schedule ts
+JOIN tours t ON ts.tour_id = t.id
+LEFT JOIN bookings b ON ts.id = b.tour_schedule_id
+LEFY JOIN booking_passengers bp ON b.id = bp.booking_id
+GROUP BY t.name,ts.start_date, ts.capacity
+ORDER BY ts.sstart_date;
+]}
+2026-03-08 22:33:03 [http-nio-8080-exec-5] INFO  b.s.t.controller.BookingController - Request for booking seats stats
+2026-03-08 22:33:03 [http-nio-8080-exec-5] ERROR b.s.t.G.GlobalExceptionHandler - something was wrong with message StatementCallback; bad SQL grammar [ SELECT
+     t.name AS tour_name,
+     ts.start_date,
+     ts.capacity,
+     COUNT(bp.id) AS booked_places
+     ts.capacity - COUNT(bp.id) AS available_places
+FROM tour_schedule ts
+JOIN tours t ON ts.tour_id = t.id
+LEFT JOIN bookings b ON ts.id = b.tour_schedule_id
+LEFY JOIN booking_passengers bp ON b.id = bp.booking_id
+GROUP BY t.name,ts.start_date, ts.capacity
+ORDER BY ts.sstart_date;
+]}
+2026-03-08 22:33:17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-08 22:33:17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-08 22:33:20 [main] INFO  b.sysoev.tourApp.TourAppApplication - Starting TourAppApplication using Java 17.0.14 with PID 45670 (/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main started by whitesmurf in /Users/whitesmurf/Desktop/projects/tourApp)
+2026-03-08 22:33:20 [main] INFO  b.sysoev.tourApp.TourAppApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-08 22:33:20 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-08 22:33:20 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-08 22:33:20 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-08 22:33:20 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-08 22:33:20 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@e29f4f6
+2026-03-08 22:33:20 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-08 22:33:21 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-03-08 22:33:21 [main] INFO  b.sysoev.tourApp.TourAppApplication - Started TourAppApplication in 1.371 seconds (process running for 1.656)
+2026-03-08 22:34:20 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-08 22:34:21 [http-nio-8080-exec-1] INFO  b.s.t.controller.BookingController - Request for booking seats stats
+2026-03-08 22:35:26 [http-nio-8080-exec-4] INFO  b.s.t.controller.CityController - Request for most popular cities
+2026-03-08 22:35:26 [http-nio-8080-exec-4] ERROR b.s.t.G.GlobalExceptionHandler - something was wrong with message StatementCallback; bad SQL grammar [SELECT
+    l.city_name AS city_name,
+    COUNT(b.id) AS bookings_count
+FROM locations l
+JOIN hotels h ON l.id = h.location_id
+JOIN tours t ON h.id = t.hotel_id
+JOIN tour_schedule ts ON t.id = ts.tour_id
+JOIN bookings b ON ts.id = b.tour_schedule_id
+GOUP BY l.city_name
+ORDER BY bookings_count DESC
+LIMIT 5;
+]}
+2026-03-08 22:37:53 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-08 22:37:53 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-08 22:37:55 [main] INFO  b.sysoev.tourApp.TourAppApplication - Starting TourAppApplication using Java 17.0.14 with PID 45752 (/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main started by whitesmurf in /Users/whitesmurf/Desktop/projects/tourApp)
+2026-03-08 22:37:55 [main] INFO  b.sysoev.tourApp.TourAppApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-08 22:37:55 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-08 22:37:55 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-08 22:37:55 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-08 22:37:55 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-08 22:37:55 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@e29f4f6
+2026-03-08 22:37:55 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-08 22:37:56 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-03-08 22:37:56 [main] INFO  b.sysoev.tourApp.TourAppApplication - Started TourAppApplication in 1.21 seconds (process running for 1.412)
+2026-03-08 22:38:01 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-08 22:38:01 [http-nio-8080-exec-2] INFO  b.s.t.controller.CityController - Request for most popular cities
+2026-03-08 22:39:49 [http-nio-8080-exec-4] INFO  b.s.t.controller.ClientController - Request for pyments stats
+2026-03-08 22:39:49 [http-nio-8080-exec-4] ERROR b.s.t.G.GlobalExceptionHandler - something was wrong with message StatementCallback; bad SQL grammar [SELECT
+    u.first_name,
+    u.last_name,
+    cp.passport_number,
+    SUM(p.amount) AS total_spend
+FROM clint_profiles cp
+JOIN users u ON cp.user_id = u.id
+JOIN bookings b ON u.id = b.user_id
+JOIN payments p ON p.booking_id = b.id
+GROUP BY u.first_name,u.last_name,cp.passport_number
+ORDER BY total_spend DESC;
+]}
+2026-03-08 22:41:08 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-08 22:41:08 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-08 22:41:10 [main] INFO  b.sysoev.tourApp.TourAppApplication - Starting TourAppApplication using Java 17.0.14 with PID 45815 (/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main started by whitesmurf in /Users/whitesmurf/Desktop/projects/tourApp)
+2026-03-08 22:41:10 [main] INFO  b.sysoev.tourApp.TourAppApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-08 22:41:10 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-08 22:41:10 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-08 22:41:10 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-08 22:41:10 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-08 22:41:10 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@e29f4f6
+2026-03-08 22:41:10 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-08 22:41:11 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-03-08 22:41:11 [main] INFO  b.sysoev.tourApp.TourAppApplication - Started TourAppApplication in 1.192 seconds (process running for 1.353)
+2026-03-08 22:41:15 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-08 22:41:15 [http-nio-8080-exec-2] INFO  b.s.t.controller.ClientController - Request for pyments stats
+2026-03-08 22:41:40 [http-nio-8080-exec-3] INFO  b.s.t.controller.ClientController - Request for for clients last bookings
+2026-03-08 22:41:41 [http-nio-8080-exec-3] ERROR b.s.t.G.GlobalExceptionHandler - something was wrong with message StatementCallback; bad SQL grammar [WITH last_booking AS (
+    SELECT
+        b.user_id
+        MAX(b.created_at) as last_booking_date
+    FRON bookings b
+    GROUP BY b.user_id
+)
+SELECT
+    u.fist_mame,
+    u.last_name,
+    lb.last_booking_date
+FROM last_booking lb
+JOIN users u ON u.id = lb.user_id
+ORDER BY lb.last_booking_date DESC;
+]}
+2026-03-08 22:42:48 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-08 22:42:48 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-08 22:42:49 [main] INFO  b.sysoev.tourApp.TourAppApplication - Starting TourAppApplication using Java 17.0.14 with PID 45865 (/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main started by whitesmurf in /Users/whitesmurf/Desktop/projects/tourApp)
+2026-03-08 22:42:49 [main] INFO  b.sysoev.tourApp.TourAppApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-08 22:42:50 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-08 22:42:50 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-08 22:42:50 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-08 22:42:50 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-08 22:42:50 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@e29f4f6
+2026-03-08 22:42:50 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-08 22:42:50 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-03-08 22:42:50 [main] INFO  b.sysoev.tourApp.TourAppApplication - Started TourAppApplication in 1.273 seconds (process running for 1.422)
+2026-03-08 22:42:57 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-08 22:42:57 [http-nio-8080-exec-2] INFO  b.s.t.controller.ClientController - Request for for clients last bookings
+2026-03-08 22:42:57 [http-nio-8080-exec-2] ERROR b.s.t.G.GlobalExceptionHandler - something was wrong with message StatementCallback; bad SQL grammar [WITH last_booking AS (
+    SELECT
+        b.user_id,
+        MAX(b.created_at) as last_booking_date
+    FROM bookings b
+    GROUP BY b.user_id
+)
+SELECT
+    u.fist_mame,
+    u.last_name,
+    lb.last_booking_date
+FROM last_booking lb
+JOIN users u ON u.id = lb.user_id
+ORDER BY lb.last_booking_date DESC;
+]}
+2026-03-08 22:43:53 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-08 22:43:53 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-08 22:43:55 [main] INFO  b.sysoev.tourApp.TourAppApplication - Starting TourAppApplication using Java 17.0.14 with PID 45893 (/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main started by whitesmurf in /Users/whitesmurf/Desktop/projects/tourApp)
+2026-03-08 22:43:55 [main] INFO  b.sysoev.tourApp.TourAppApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-08 22:43:55 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-08 22:43:55 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-08 22:43:55 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-08 22:43:55 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-08 22:43:55 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@e29f4f6
+2026-03-08 22:43:55 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-08 22:43:56 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-03-08 22:43:56 [main] INFO  b.sysoev.tourApp.TourAppApplication - Started TourAppApplication in 1.234 seconds (process running for 1.409)
+2026-03-08 22:44:01 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-08 22:44:01 [http-nio-8080-exec-1] INFO  b.s.t.controller.ClientController - Request for for clients last bookings
+2026-03-08 22:44:39 [http-nio-8080-exec-3] INFO  b.s.t.controller.TourController - Request for getting full information about tour with id: 1
+2026-03-08 22:44:39 [http-nio-8080-exec-3] ERROR b.s.t.G.GlobalExceptionHandler - something was wrong with message PreparedStatementCallback; bad SQL grammar [SELECT
+    t.name AS tour_name,
+    l.city_name AS city_name,
+    c.name AS climate_name,
+    h.name AS hotel_name,
+    h.stars,
+    tt.type AS tour_type
+    ts.name AS transport_name
+FROM tours t
+JOIN hotels h ON t.hotel_id = h.id
+JOIN locations l ON t.location_id = l.id
+JOIN climats c ON l.climate_id = c.id
+JOIN tour_types tt ON t.tour_type_id = tt.id
+JOIN transport tr ON t.transport id = tr.id
+WHERE t.id = ?;
+]}
+2026-03-08 22:45:21 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-08 22:45:21 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-08 22:45:23 [main] INFO  b.sysoev.tourApp.TourAppApplication - Starting TourAppApplication using Java 17.0.14 with PID 45982 (/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main started by whitesmurf in /Users/whitesmurf/Desktop/projects/tourApp)
+2026-03-08 22:45:23 [main] INFO  b.sysoev.tourApp.TourAppApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-08 22:45:23 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-08 22:45:23 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-08 22:45:23 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-08 22:45:23 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-08 22:45:23 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@e29f4f6
+2026-03-08 22:45:23 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-08 22:45:24 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-03-08 22:45:24 [main] INFO  b.sysoev.tourApp.TourAppApplication - Started TourAppApplication in 1.294 seconds (process running for 1.505)
+2026-03-08 22:45:28 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-08 22:45:28 [http-nio-8080-exec-2] INFO  b.s.t.controller.TourController - Request for getting full information about tour with id: 1
+2026-03-08 22:45:28 [http-nio-8080-exec-2] ERROR b.s.t.G.GlobalExceptionHandler - something was wrong with message PreparedStatementCallback; bad SQL grammar [SELECT
+    t.name AS tour_name,
+    l.city_name AS city_name,
+    c.name AS climate_name,
+    h.name AS hotel_name,
+    h.stars,
+    tt.type AS tour_type
+    ts.name AS transport_name
+FROM tours t
+JOIN hotels h ON t.hotel_id = h.id
+JOIN locations l ON t.location_id = l.id
+JOIN climats c ON l.climate_id = c.id
+JOIN tour_types tt ON t.tour_type_id = tt.id
+JOIN transport tr ON t.transport id = tr.id
+WHERE t.id = ?;
+]}
+2026-03-08 22:46:29 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-08 22:46:29 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-08 22:46:30 [main] INFO  b.sysoev.tourApp.TourAppApplication - Starting TourAppApplication using Java 17.0.14 with PID 46020 (/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main started by whitesmurf in /Users/whitesmurf/Desktop/projects/tourApp)
+2026-03-08 22:46:30 [main] INFO  b.sysoev.tourApp.TourAppApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-08 22:46:31 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-08 22:46:31 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-08 22:46:31 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-08 22:46:31 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-08 22:46:31 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@e29f4f6
+2026-03-08 22:46:31 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-08 22:46:31 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-03-08 22:46:31 [main] INFO  b.sysoev.tourApp.TourAppApplication - Started TourAppApplication in 1.232 seconds (process running for 1.446)
+2026-03-08 22:46:42 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-08 22:46:42 [http-nio-8080-exec-2] INFO  b.s.t.controller.TourController - Request for getting full information about tour with id: 1
+2026-03-08 22:46:42 [http-nio-8080-exec-2] ERROR b.s.t.G.GlobalExceptionHandler - something was wrong with message PreparedStatementCallback; bad SQL grammar [SELECT
+    t.name AS tour_name,
+    l.city_name AS city_name,
+    c.name AS climate_name,
+    h.name AS hotel_name,
+    h.stars,
+    tt.type AS tour_type,
+    ts.name AS transport_name
+FROM tours t
+JOIN hotels h ON t.hotel_id = h.id
+JOIN locations l ON t.location_id = l.id
+JOIN climats c ON l.climate_id = c.id
+JOIN tour_types tt ON t.tour_type_id = tt.id
+JOIN transport tr ON t.transport id = tr.id
+WHERE t.id = ?;
+]}
+2026-03-08 22:48:24 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-08 22:48:24 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-08 22:48:25 [main] INFO  b.sysoev.tourApp.TourAppApplication - Starting TourAppApplication using Java 17.0.14 with PID 46061 (/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main started by whitesmurf in /Users/whitesmurf/Desktop/projects/tourApp)
+2026-03-08 22:48:25 [main] INFO  b.sysoev.tourApp.TourAppApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-08 22:48:26 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-08 22:48:26 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-08 22:48:26 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-08 22:48:26 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-08 22:48:26 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@e29f4f6
+2026-03-08 22:48:26 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-08 22:48:26 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-03-08 22:48:26 [main] INFO  b.sysoev.tourApp.TourAppApplication - Started TourAppApplication in 1.22 seconds (process running for 1.361)
+2026-03-08 22:48:31 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-08 22:48:31 [http-nio-8080-exec-2] INFO  b.s.t.controller.TourController - Request for getting full information about tour with id: 1
+2026-03-08 22:48:31 [http-nio-8080-exec-2] ERROR b.s.t.G.GlobalExceptionHandler - something was wrong with message PreparedStatementCallback; bad SQL grammar [SELECT
+    t.name AS tour_name,
+    l.city_name AS city_name,
+    c.name AS climate_name,
+    h.name AS hotel_name,
+    h.stars,
+    tt.type AS tour_type,
+    tr.name AS transport_name
+FROM tours t
+JOIN hotels h ON t.hotel_id = h.id
+JOIN locations l ON t.location_id = l.id
+JOIN climates c ON l.climate_id = c.id
+JOIN tour_types tt ON t.tour_type_id = tt.id
+JOIN transport tr ON t.transport_id = tr.id
+WHERE t.id = ?;
+]}
+2026-03-08 22:50:16 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-08 22:50:16 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-08 22:50:18 [main] INFO  b.sysoev.tourApp.TourAppApplication - Starting TourAppApplication using Java 17.0.14 with PID 46118 (/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main started by whitesmurf in /Users/whitesmurf/Desktop/projects/tourApp)
+2026-03-08 22:50:18 [main] INFO  b.sysoev.tourApp.TourAppApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-08 22:50:18 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-08 22:50:18 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-08 22:50:18 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-08 22:50:18 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-08 22:50:18 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@e29f4f6
+2026-03-08 22:50:18 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-08 22:50:19 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-03-08 22:50:19 [main] INFO  b.sysoev.tourApp.TourAppApplication - Started TourAppApplication in 1.695 seconds (process running for 1.872)
+2026-03-08 22:50:20 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-08 22:50:20 [http-nio-8080-exec-2] INFO  b.s.t.controller.TourController - Request for getting full information about tour with id: 1
+2026-03-08 22:50:20 [http-nio-8080-exec-2] ERROR b.s.t.G.GlobalExceptionHandler - something was wrong with message PreparedStatementCallback; bad SQL grammar [SELECT
+    t.name AS tour_name,
+    l.city_name AS city_name,
+    c.name AS climate_name,
+    h.name AS hotel_name,
+    h.stars,
+    tt.type AS tour_type,
+    tr.name AS transport_name
+FROM tours t
+JOIN hotels h ON t.hotel_id = h.id
+JOIN locations l ON t.location_id = l.id
+JOIN climats c ON l.climate_id = c.id
+JOIN tour_types tt ON t.tour_type_id = tt.id
+JOIN transport tr ON t.transport_id = tr.id
+WHERE t.id = ?;
+]}
+2026-03-08 22:56:04 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-08 22:56:04 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-08 22:56:06 [main] INFO  b.sysoev.tourApp.TourAppApplication - Starting TourAppApplication using Java 17.0.14 with PID 46196 (/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main started by whitesmurf in /Users/whitesmurf/Desktop/projects/tourApp)
+2026-03-08 22:56:06 [main] INFO  b.sysoev.tourApp.TourAppApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-08 22:56:06 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-08 22:56:06 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-08 22:56:06 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-08 22:56:06 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-08 22:56:06 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@e29f4f6
+2026-03-08 22:56:06 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-08 22:56:07 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-03-08 22:56:07 [main] INFO  b.sysoev.tourApp.TourAppApplication - Started TourAppApplication in 1.284 seconds (process running for 1.497)
+2026-03-08 22:56:11 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-08 22:56:11 [http-nio-8080-exec-2] INFO  b.s.t.controller.TourController - Request for getting full information about tour with id: 1
+2026-03-08 22:56:29 [http-nio-8080-exec-3] INFO  b.s.t.controller.TourController - Request for tours bookings stats
+2026-03-08 22:56:29 [http-nio-8080-exec-3] ERROR b.s.t.G.GlobalExceptionHandler - something was wrong with message StatementCallback; bad SQL grammar [SELECT
+    t.name AS tour_name,
+    COUNT(b.id) AS total_bookings
+FROM tours t
+JOIN tour_schedule ON t.id = ts.tour_id
+JOIN bookings b ON ts.id = b.tour_schedule_id
+GROUP BY t.name
+ORDER BY total_bookings DESC;
+]}
+2026-03-08 22:58:16 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-08 22:58:16 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-08 22:58:18 [main] INFO  b.sysoev.tourApp.TourAppApplication - Starting TourAppApplication using Java 17.0.14 with PID 46235 (/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main started by whitesmurf in /Users/whitesmurf/Desktop/projects/tourApp)
+2026-03-08 22:58:18 [main] INFO  b.sysoev.tourApp.TourAppApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-08 22:58:18 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-08 22:58:18 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-08 22:58:18 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-08 22:58:18 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-08 22:58:18 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@e29f4f6
+2026-03-08 22:58:18 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-08 22:58:19 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-03-08 22:58:19 [main] INFO  b.sysoev.tourApp.TourAppApplication - Started TourAppApplication in 1.189 seconds (process running for 1.34)
+2026-03-08 22:58:22 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-08 22:58:22 [http-nio-8080-exec-1] INFO  b.s.t.controller.TourController - Request for tours bookings stats
+2026-03-08 22:59:03 [http-nio-8080-exec-3] INFO  b.s.t.controller.TourController - Request for tours reviews
+2026-03-08 22:59:03 [http-nio-8080-exec-3] ERROR b.s.t.G.GlobalExceptionHandler - something was wrong with message StatementCallback; bad SQL grammar [SELECT
+    t.name AS tour_name,
+    COUNT(tr.id) AS tour_reviews,
+    AVG(tr.tour_mark) AS avg_rating
+FROM tours t
+LEFT JOIN tour_reviews tr ON t.id =  tr.tour_id
+GROUP BY t.name
+ORDER BY avg_rating DESC;
+]}
+2026-03-08 23:01:56 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-08 23:01:56 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-08 23:01:58 [main] INFO  b.sysoev.tourApp.TourAppApplication - Starting TourAppApplication using Java 17.0.14 with PID 46287 (/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main started by whitesmurf in /Users/whitesmurf/Desktop/projects/tourApp)
+2026-03-08 23:01:58 [main] INFO  b.sysoev.tourApp.TourAppApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-08 23:01:58 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-08 23:01:58 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-08 23:01:58 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-08 23:01:58 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-08 23:01:58 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@e29f4f6
+2026-03-08 23:01:58 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-08 23:01:59 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-03-08 23:01:59 [main] INFO  b.sysoev.tourApp.TourAppApplication - Started TourAppApplication in 1.325 seconds (process running for 1.472)
+2026-03-08 23:02:00 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-08 23:02:00 [http-nio-8080-exec-1] INFO  b.s.t.controller.TourController - Request for tours reviews
+2026-03-08 23:02:49 [http-nio-8080-exec-3] INFO  b.s.t.controller.TourController - Request for tours services 
+2026-03-08 23:03:10 [http-nio-8080-exec-4] INFO  b.s.t.controller.TourController - Request for top 3 tours by bookings
+2026-03-08 23:03:10 [http-nio-8080-exec-4] ERROR b.s.t.G.GlobalExceptionHandler - something was wrong with message StatementCallback; bad SQL grammar [SELECT
+    t.name AS tour_name,
+    COUNT(b.id) AS booking_count,
+    RANK() OVER (ORDER BY (b.id) DESC) AS popularity_rank
+FROM tours t
+JOIN bookings b ON t.id = b.tour_id
+GROUP BY t.name
+ORDER BY popularity_rank
+LIMIT 3;
+]}
+2026-03-08 23:06:49 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-08 23:06:49 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-08 23:06:51 [main] INFO  b.sysoev.tourApp.TourAppApplication - Starting TourAppApplication using Java 17.0.14 with PID 46357 (/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main started by whitesmurf in /Users/whitesmurf/Desktop/projects/tourApp)
+2026-03-08 23:06:51 [main] INFO  b.sysoev.tourApp.TourAppApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-08 23:06:51 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-08 23:06:51 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-08 23:06:51 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-08 23:06:51 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-08 23:06:51 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@e29f4f6
+2026-03-08 23:06:51 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-08 23:06:52 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-03-08 23:06:52 [main] INFO  b.sysoev.tourApp.TourAppApplication - Started TourAppApplication in 1.229 seconds (process running for 1.451)
+2026-03-08 23:06:57 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-08 23:06:57 [http-nio-8080-exec-1] INFO  b.s.t.controller.TourController - Request for top 3 tours by bookings
+2026-03-08 23:06:57 [http-nio-8080-exec-1] ERROR b.s.t.G.GlobalExceptionHandler - something was wrong with message StatementCallback; bad SQL grammar [SELECT
+    t.name AS tour_name,
+    COUNT(b.id) AS booking_count,
+    RANK() OVER (ORDER BY COUNT(b.id) DESC) AS popularity_rank
+FROM tours t
+JOIN bookings b ON t.id = b.tour_id
+GROUP BY t.name
+ORDER BY popularity_rank
+LIMIT 3;
+]}
+2026-03-08 23:12:34 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-08 23:12:34 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-08 23:12:35 [main] INFO  b.sysoev.tourApp.TourAppApplication - Starting TourAppApplication using Java 17.0.14 with PID 46437 (/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main started by whitesmurf in /Users/whitesmurf/Desktop/projects/tourApp)
+2026-03-08 23:12:35 [main] INFO  b.sysoev.tourApp.TourAppApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-08 23:12:35 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-08 23:12:35 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-08 23:12:35 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-08 23:12:35 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-08 23:12:36 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@e29f4f6
+2026-03-08 23:12:36 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-08 23:12:36 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-03-08 23:12:36 [main] INFO  b.sysoev.tourApp.TourAppApplication - Started TourAppApplication in 1.287 seconds (process running for 1.499)
+2026-03-08 23:12:41 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-08 23:12:41 [http-nio-8080-exec-2] INFO  b.s.t.controller.TourController - Request for top 3 tours by bookings
+2026-03-08 23:14:39 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-08 23:14:39 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-08 23:14:40 [main] INFO  b.sysoev.tourApp.TourAppApplication - Starting TourAppApplication using Java 17.0.14 with PID 46513 (/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main started by whitesmurf in /Users/whitesmurf/Desktop/projects/tourApp)
+2026-03-08 23:14:40 [main] INFO  b.sysoev.tourApp.TourAppApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-08 23:14:41 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-08 23:14:41 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-08 23:14:41 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-08 23:14:41 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-08 23:14:41 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@e29f4f6
+2026-03-08 23:14:41 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-08 23:14:41 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-03-08 23:14:41 [main] INFO  b.sysoev.tourApp.TourAppApplication - Started TourAppApplication in 1.285 seconds (process running for 1.491)
+2026-03-08 23:14:46 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-08 23:14:46 [http-nio-8080-exec-2] INFO  b.s.t.controller.TourController - Request for top 3 tours by bookings
+2026-03-08 23:16:08 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-08 23:16:08 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-08 23:16:09 [main] INFO  b.sysoev.tourApp.TourAppApplication - Starting TourAppApplication using Java 17.0.14 with PID 46576 (/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main started by whitesmurf in /Users/whitesmurf/Desktop/projects/tourApp)
+2026-03-08 23:16:09 [main] INFO  b.sysoev.tourApp.TourAppApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-08 23:16:10 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-08 23:16:10 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-08 23:16:10 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-08 23:16:10 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-08 23:16:10 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@e29f4f6
+2026-03-08 23:16:10 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-08 23:16:10 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-03-08 23:16:10 [main] INFO  b.sysoev.tourApp.TourAppApplication - Started TourAppApplication in 1.23 seconds (process running for 1.465)
+2026-03-08 23:16:15 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-08 23:16:15 [http-nio-8080-exec-1] INFO  b.s.t.controller.TourController - Request for top 3 tours by bookings
+2026-03-08 23:16:15 [http-nio-8080-exec-1] ERROR b.s.t.G.GlobalExceptionHandler - something was wrong with message StatementCallback; bad SQL grammar [WITH tour_bookings AS (
+            WITH tour_counts AS (
+                     SELECT
+                         t.id,
+                         t.name AS tour_name,
+                         COUNT(b.id) AS booking_count
+                     FROM tours t
+                     JOIN tour_schedule ts ON t.id = ts.tour_id
+                     JOIN bookings b ON ts.id = b.tour_schedule_id
+                     GROUP BY t.id, t.name
+                 )
+                 SELECT
+                     tour_name,
+                     booking_count,
+                     RANK() OVER (ORDER BY booking_count DESC) AS popularity_rank
+                 FROM tour_counts
+                 ORDER BY popularity_rank
+                 LIMIT 3;
+]}
+2026-03-08 23:17:04 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-08 23:17:04 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-08 23:17:06 [main] INFO  b.sysoev.tourApp.TourAppApplication - Starting TourAppApplication using Java 17.0.14 with PID 46610 (/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main started by whitesmurf in /Users/whitesmurf/Desktop/projects/tourApp)
+2026-03-08 23:17:06 [main] INFO  b.sysoev.tourApp.TourAppApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-08 23:17:06 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-08 23:17:06 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-08 23:17:06 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-08 23:17:06 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-08 23:17:06 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@e29f4f6
+2026-03-08 23:17:06 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-08 23:17:07 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-03-08 23:17:07 [main] INFO  b.sysoev.tourApp.TourAppApplication - Started TourAppApplication in 1.275 seconds (process running for 1.469)
+2026-03-08 23:17:11 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-08 23:17:11 [http-nio-8080-exec-2] INFO  b.s.t.controller.TourController - Request for top 3 tours by bookings
+2026-03-08 23:17:45 [http-nio-8080-exec-3] INFO  b.s.t.c.TourOperatorController - Request for tour operators statistics 
+2026-03-08 23:17:45 [http-nio-8080-exec-3] ERROR b.s.t.G.GlobalExceptionHandler - something was wrong with message StatementCallback; bad SQL grammar [SELECT
+     top.company_name,
+     COUNT(DISTINCT t.id) AS tours_count,
+     COUNT(DISTINCT b.ib) AS bookings_count,
+     SUM(p.amount) AS total_revenue,
+     AVG(p.amount) AS avg_payment
+FROM tour_operator_profile top
+JOIN tour t ON top.id = t.tour_operator_profile
+JOIN tour_schedule ts ON t.id = ts.tour_id
+JOIN bookings b ON ts.id = b.tur_schedule_id
+JOIN payments p ON b.id = p.booking_id
+GROUP BY top.company_name
+ORDER BY total_revenue DESC;
+]}
+2026-03-08 23:22:14 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-08 23:22:14 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-08 23:22:15 [main] INFO  b.sysoev.tourApp.TourAppApplication - Starting TourAppApplication using Java 17.0.14 with PID 46700 (/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main started by whitesmurf in /Users/whitesmurf/Desktop/projects/tourApp)
+2026-03-08 23:22:15 [main] INFO  b.sysoev.tourApp.TourAppApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-08 23:22:16 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-08 23:22:16 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-08 23:22:16 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-08 23:22:16 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-08 23:22:16 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@e29f4f6
+2026-03-08 23:22:16 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-08 23:22:16 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-03-08 23:22:16 [main] INFO  b.sysoev.tourApp.TourAppApplication - Started TourAppApplication in 1.263 seconds (process running for 1.458)
+2026-03-08 23:22:20 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-08 23:22:20 [http-nio-8080-exec-2] INFO  b.s.t.c.TourOperatorController - Request for tour operators statistics 
+2026-03-08 23:22:20 [http-nio-8080-exec-2] ERROR b.s.t.G.GlobalExceptionHandler - something was wrong with message StatementCallback; bad SQL grammar [SELECT
+     top.company_name,
+     COUNT(DISTINCT t.id) AS tours_count,
+     COUNT(DISTINCT b.id) AS bookings_count,
+     SUM(p.amount) AS total_revenue,
+     AVG(p.amount) AS avg_payment
+FROM tour_operator_profile top
+JOIN tours t ON top.id = t.tour_operator_profile_id
+JOIN tour_schedule ts ON t.id = ts.tour_id
+JOIN bookings b ON ts.id = b.tour_schedule_id
+JOIN payments p ON b.id = p.booking_id
+GROUP BY top.company_name
+ORDER BY total_revenue DESC;
+]}
+2026-03-08 23:24:01 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-08 23:24:01 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-08 23:24:03 [main] INFO  b.sysoev.tourApp.TourAppApplication - Starting TourAppApplication using Java 17.0.14 with PID 46734 (/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main started by whitesmurf in /Users/whitesmurf/Desktop/projects/tourApp)
+2026-03-08 23:24:03 [main] INFO  b.sysoev.tourApp.TourAppApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-08 23:24:03 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-08 23:24:03 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-08 23:24:03 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-08 23:24:03 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-08 23:24:03 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@e29f4f6
+2026-03-08 23:24:03 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-08 23:24:03 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-03-08 23:24:03 [main] INFO  b.sysoev.tourApp.TourAppApplication - Started TourAppApplication in 1.185 seconds (process running for 1.326)
+2026-03-08 23:24:13 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-08 23:24:13 [http-nio-8080-exec-2] INFO  b.s.t.c.TourOperatorController - Request for tour operators statistics 

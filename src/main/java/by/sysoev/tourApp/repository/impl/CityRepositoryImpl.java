@@ -27,7 +27,7 @@ public class CityRepositoryImpl implements CityRepository{
                 JOIN tours t ON h.id = t.hotel_id 
                 JOIN tour_schedule ts ON t.id = ts.tour_id
                 JOIN bookings b ON ts.id = b.tour_schedule_id
-                GOUP BY l.city_name
+                GROUP BY l.city_name
                 ORDER BY bookings_count DESC
                 LIMIT 5;
                 """;

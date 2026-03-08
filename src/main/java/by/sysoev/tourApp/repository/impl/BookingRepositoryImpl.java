@@ -49,14 +49,14 @@ public class BookingRepositoryImpl implements BookingRepository {
                     t.name AS tour_name,
                     ts.start_date,
                     ts.capacity,
-                    COUNT(bp.id) AS booked_places
+                    COUNT(bp.id) AS booked_places,
                     ts.capacity - COUNT(bp.id) AS available_places
                FROM tour_schedule ts
                JOIN tours t ON ts.tour_id = t.id
                LEFT JOIN bookings b ON ts.id = b.tour_schedule_id
-               LEFY JOIN booking_passengers bp ON b.id = bp.booking_id
+               LEFT JOIN booking_passengers bp ON b.id = bp.booking_id
                GROUP BY t.name,ts.start_date, ts.capacity
-               ORDER BY ts.sstart_date;
+               ORDER BY ts.start_date;
                """;
 
         log.debug("Select booking seats stats");

@@ -26,7 +26,7 @@ public class ClientRepositoryImpl implements ClientRepository {
                     u.last_name,
                     cp.passport_number,
                     SUM(p.amount) AS total_spend
-                FROM clint_profiles cp
+                FROM client_profiles cp
                 JOIN users u ON cp.user_id = u.id
                 JOIN bookings b ON u.id = b.user_id
                 JOIN payments p ON p.booking_id = b.id 
@@ -49,13 +49,13 @@ public class ClientRepositoryImpl implements ClientRepository {
         String sql = """
                 WITH last_booking AS (
                     SELECT 
-                        b.user_id
+                        b.user_id,
                         MAX(b.created_at) as last_booking_date
-                    FRON bookings b
+                    FROM bookings b
                     GROUP BY b.user_id
                 )
                 SELECT
-                    u.fist_mame,
+                    u.first_name,
                     u.last_name,
                     lb.last_booking_date
                 FROM last_booking lb
