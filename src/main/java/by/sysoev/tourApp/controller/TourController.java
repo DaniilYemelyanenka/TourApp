@@ -1,8 +1,6 @@
 package by.sysoev.tourApp.controller;
 
-import by.sysoev.tourApp.DTO.TourBookingStatsDTO;
-import by.sysoev.tourApp.DTO.TourDTO;
-import by.sysoev.tourApp.DTO.TourReviewDTO;
+import by.sysoev.tourApp.DTO.*;
 import by.sysoev.tourApp.service.TourService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -25,15 +23,27 @@ public class TourController {
         return ResponseEntity.status(HttpStatus.OK).body(tour);
     }
 
-    @GetMapping("stats")
+    @GetMapping("/stats")
     public ResponseEntity<List<TourBookingStatsDTO>> getTourBookingStats(){
         List<TourBookingStatsDTO> stats = tourService.getToursBookingStats();
         return ResponseEntity.status(HttpStatus.FOUND).body(stats);
     }
 
-    @GetMapping("reviews")
+    @GetMapping("/reviews")
     public ResponseEntity<List<TourReviewDTO>> getTourReviews(){
         List<TourReviewDTO> reviews = tourService.getTourReviews();
         return ResponseEntity.status(HttpStatus.OK).body(reviews);
+    }
+
+    @GetMapping("/services")
+    public ResponseEntity<List<TourServicesDTO>> getToursServices(){
+        List<TourServicesDTO> tourServicesList = tourService.getTourServices();
+        return ResponseEntity.status(HttpStatus.OK).body(tourServicesList);
+    }
+
+    @GetMapping("/top")
+    public ResponseEntity<List<TopTourDTO>> getTop3Tour(){
+        List<TopTourDTO> topList = tourService.getTop3Tours();
+        return ResponseEntity.status(HttpStatus.OK).body(topList);
     }
 }

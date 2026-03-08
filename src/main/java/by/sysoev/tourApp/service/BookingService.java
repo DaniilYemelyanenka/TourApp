@@ -1,6 +1,7 @@
 package by.sysoev.tourApp.service;
 
 import by.sysoev.tourApp.DTO.BookingDTO;
+import by.sysoev.tourApp.DTO.BookingSeatsStatsDTO;
 import by.sysoev.tourApp.repository.impl.BookingRepositoryImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -22,5 +23,9 @@ public class BookingService {
                 );
 
         bookingRepository.addBookingPassengers(bookingId,bookingDTO.getPassengers());
+    }
+
+    public List<BookingSeatsStatsDTO> getBookingSeatsStats() {
+        return bookingRepository.getBookingSeatsStats();
     }
 }

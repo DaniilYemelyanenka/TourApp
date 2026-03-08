@@ -1,7 +1,8 @@
 package by.sysoev.tourApp.service;
 
+import by.sysoev.tourApp.DTO.LastBookingUsersDTO;
 import by.sysoev.tourApp.DTO.PaymentsStatsDTO;
-import by.sysoev.tourApp.repository.impl.ClientServiceRepositoryImpl;
+import by.sysoev.tourApp.repository.impl.ClientRepositoryImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -11,8 +12,14 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ClientService {
 
-    private final ClientServiceRepositoryImpl clientServiceRepository;
+    private final ClientRepositoryImpl clientRepository;
 
     public List<PaymentsStatsDTO> getClientsPaymentsStats(){
-        return clientServiceRepository.getClintPaymentsStats();
-    }}
+        return clientRepository.getClintPaymentsStats();
+    }
+
+    public List<LastBookingUsersDTO> getLastBookingUsers(){
+        return clientRepository.getLastBookingUsers();
+    }
+
+}

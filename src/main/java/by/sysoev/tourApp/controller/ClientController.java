@@ -1,6 +1,7 @@
 package by.sysoev.tourApp.controller;
 
 
+import by.sysoev.tourApp.DTO.LastBookingUsersDTO;
 import by.sysoev.tourApp.DTO.PaymentsStatsDTO;
 import by.sysoev.tourApp.service.ClientService;
 import lombok.RequiredArgsConstructor;
@@ -25,5 +26,10 @@ public class ClientController {
 
         List<PaymentsStatsDTO> stats = clientService.getClientsPaymentsStats();
         return ResponseEntity.status(HttpStatus.OK).body(stats);
+    }
+    @GetMapping("/lastBooking")
+    public ResponseEntity<List<LastBookingUsersDTO>> getLastBookingsUsers(){
+        List<LastBookingUsersDTO> list = clientService.getLastBookingUsers();
+        return ResponseEntity.status(HttpStatus.OK).body(list);
     }
 }

@@ -29,7 +29,7 @@ public class TourOperatorRepositoryImpl implements TourOperatorRepository {
                JOIN bookings b ON ts.id = b.tur_schedule_id
                JOOIN payments p ON b.id = p.booking_id
                GROUP BY top.company_name
-               ORDER BY total_revenue DESC
+               ORDER BY total_revenue DESC;
                """;
 
         return jdbcTemplate.query(sql,(rs,rowNum) -> new TourOperatorStatsDTO(

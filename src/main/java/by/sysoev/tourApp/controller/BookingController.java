@@ -1,6 +1,7 @@
 package by.sysoev.tourApp.controller;
 
 import by.sysoev.tourApp.DTO.BookingDTO;
+import by.sysoev.tourApp.DTO.BookingSeatsStatsDTO;
 import by.sysoev.tourApp.service.BookingService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -24,7 +25,8 @@ public class BookingController {
     }
 
     @GetMapping()
-    public ResponseEntity<List<BookingSeatsStatsDTO>> getBookingSeattsStats(){
-        return ResponseEntity.status(HttpStatus.OK).body(Collections.emptyList());
+    public ResponseEntity<List<BookingSeatsStatsDTO>> getBookingSeatsStats(){
+        List<BookingSeatsStatsDTO> seatsList = bookingService.getBookingSeatsStats();
+        return ResponseEntity.status(HttpStatus.OK).body(seatsList);
     }
 }

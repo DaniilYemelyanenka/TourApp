@@ -1,8 +1,6 @@
 package by.sysoev.tourApp.service;
 
-import by.sysoev.tourApp.DTO.TourBookingStatsDTO;
-import by.sysoev.tourApp.DTO.TourDTO;
-import by.sysoev.tourApp.DTO.TourReviewDTO;
+import by.sysoev.tourApp.DTO.*;
 import by.sysoev.tourApp.repository.impl.TourRepositoryImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -26,6 +24,13 @@ public class TourService {
 
     public List<TourReviewDTO> getTourReviews(){
         return tourRepository.getTourReviews();
+    }
+
+    public List<TourServicesDTO> getTourServices(){
+        return tourRepository.getToursServices();
+    }
+    public List<TopTourDTO> getTop3Tours(){
+        return tourRepository.getTop3Tours();
     }
 
 }

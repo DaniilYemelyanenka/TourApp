@@ -1,5 +1,6 @@
 package by.sysoev.tourApp.repository.impl;
 
+import by.sysoev.tourApp.DTO.BookingSeatsStatsDTO;
 import by.sysoev.tourApp.entity.Passenger;
 import by.sysoev.tourApp.repository.BookingRepository;
 import lombok.RequiredArgsConstructor;
@@ -38,5 +39,31 @@ public class BookingRepositoryImpl implements BookingRepository {
                         ps.setString(2, passenger.getFirstName());
                         ps.setString(3, passenger.getLastName());
         });
+    }
+
+    public List<BookingSeatsStatsDTO> getBookingSeatsStats() {
+        String sql = """
+                SELECT
+                    t.name AS tour_name,
+                    ts.start_date,
+                    ts.capacity,
+                    COUNT(bp.id) AS booked_places
+                    ts.capacity - COUNT(bp.id) AS available_places
+               FROM tour_schedule ts
+               JOIN tours t ON ts.tour_id = t.id
+               LEFT JOIN bookings b ON ts.id = b.tour_schedule_id
+               LEFY JOIN booking_passengers bp ON b.id = bp.booking_id
+               GROUP BY t.name,ts.start_date, ts.capacity
+               ORDER BY ts.sstart_date;
+               """;
+
+
+        return jdbcTemplate.query(sql,(rs,rowNum) -> new BookingSeatsStatsDTO(
+                rs.getString("tour_name"),
+                rs.getDate("start_date"),
+                rs.getInt("capacity"),
+                rs.getInt("booked_places"),
+                rs.getInt("available_places")
+        ));
     }
 }

@@ -1,8 +1,6 @@
 package by.sysoev.tourApp.repository.impl;
 
-import by.sysoev.tourApp.DTO.TourBookingStatsDTO;
-import by.sysoev.tourApp.DTO.TourDTO;
-import by.sysoev.tourApp.DTO.TourReviewDTO;
+import by.sysoev.tourApp.DTO.*;
 import by.sysoev.tourApp.repository.TourRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -37,7 +35,7 @@ public class TourRepositoryImpl implements TourRepository {
                 JOIN climats c ON l.climate_id = c.id
                 JOIN tour_types tt ON t.tour_type_id = tt.id
                 JOIN transport tr ON t.transport id = tr.id   
-                WHERE t.id = ?
+                WHERE t.id = ?;
                 """;
         TourDTO tour = jdbcTemplate.queryForObject(sql, (rs,rowNum) ->
             new TourDTO(
@@ -63,7 +61,7 @@ public class TourRepositoryImpl implements TourRepository {
                 JOIN tour_schedule ON t.id = ts.tour_id
                 JOIN bookings b ON ts.id = b.tour_schedule_id
                 GROUP BY t.name
-                ORDER BY total_bookings DESC
+                ORDER BY total_bookings DESC;
                 """;
 
         return jdbcTemplate.query(sql,(rs,rowNum) -> new TourBookingStatsDTO(
@@ -83,7 +81,7 @@ public class TourRepositoryImpl implements TourRepository {
                 FROM tours t
                 LEFT JOIN tour_reviews tr ON t.id =  tr.tour_id
                 GROUP BY t.name
-                ORDER BY avg_rating DESC
+                ORDER BY avg_rating DESC;
                 """;
 
 
@@ -91,6 +89,46 @@ public class TourRepositoryImpl implements TourRepository {
                 rs.getString("tour_name"),
                 rs.getInt("tour_reviews"),
                 rs.getDouble("avg_rating")
+        ));
+    }
+
+    @Override
+    public List<TourServicesDTO> getToursServices() {
+        String sql = """
+                SELECT
+                    t.name AS tour_name,
+                    STRING_AGG(s.name, ', ') AS services
+                FROM tours t 
+                JOIN tour_services ts ON t.id = ts.tour_id
+                JOIN services s ON ts.service_id = s.id
+                GROUP BY t.name
+                ORDER BY t.name;
+                """;
+
+        return jdbcTemplate.query(sql,(rs,rowNum) -> new TourServicesDTO(
+                rs.getString("tour_name"),
+                rs.getString("services")
+        ));
+    }
+
+    @Override
+    public List<TopTourDTO> getTop3Tours() {
+        String sql  = """
+                SELECT 
+                    t.name AS tour_name,
+                    COUNT(b.id) AS booking_count,
+                    RANK() OVER (ORDER BY (b.id) DESC) AS popularity_rank
+                FROM tours t
+                JOIN bookings b ON t.id = b.tour_id
+                GROUP BY t.name
+                ORDER BY popularity_rank
+                LIMIT 3; 
+                """;
+
+        return jdbcTemplate.query(sql,(rs,rowNum) -> new TopTourDTO(
+                rs.getString("tour_name"),
+                rs.getInt("booking_count"),
+                rs.getInt("popularity_rank")
         ));
     }
 

@@ -27,7 +27,7 @@ public class CityRepositoryImpl implements CityRepository{
                 JOIN bookings b ON ts.id = b.tour_schedule_id
                 GOUP BY l.city_name
                 ORDER BY bookings_count DESC
-                LIMIT 5
+                LIMIT 5;
                 """;
 
         return jdbcTemplate.query(sql,(rs,rowNum) -> new MostPopularCityDTO(

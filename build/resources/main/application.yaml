@@ -16,3 +16,5 @@ spring:
         - 'classpath:triggers.sql'
       encoding: 'UTF-8'
 
+backup:
+  path: backups
