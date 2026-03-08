@@ -550,3 +550,5 @@ ORDER BY total_revenue DESC;
 2026-03-08 23:24:03 [main] INFO  b.sysoev.tourApp.TourAppApplication - Started TourAppApplication in 1.185 seconds (process running for 1.326)
 2026-03-08 23:24:13 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
 2026-03-08 23:24:13 [http-nio-8080-exec-2] INFO  b.s.t.c.TourOperatorController - Request for tour operators statistics 
+2026-03-08 23:27:26 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-08 23:27:26 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
