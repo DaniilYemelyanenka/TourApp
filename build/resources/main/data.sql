@@ -56,22 +56,22 @@ INSERT INTO transport (name) VALUES
 ('Car');
 
 -- Пользователи
-INSERT INTO users (first_name, last_name, phone, email) VALUES
-('John', 'Doe', '+1234567890', 'john@example.com'),
-('Alice', 'Smith', '+1234567891', 'alice@example.com'),
-('Bob', 'Johnson', '+1234567892', 'bob@example.com'),
-('Emma', 'Brown', '+1234567893', 'emma@example.com'),
-('David', 'Wilson', '+1234567894', 'david@example.com'),
-('Sophia', 'Taylor', '+1234567895', 'sophia@example.com'),
-('Michael', 'Anderson', '+1234567896', 'michael@example.com'),
-('Olivia', 'Thomas', '+1234567897', 'olivia@example.com'),
-('William', 'Jackson', '+1234567898', 'william@example.com'),
-('Isabella', 'White', '+1234567899', 'isabella@example.com'),
-('TourOp1', 'Company', '+1234500001', 'tourop1@example.com'),
-('TourOp2', 'Company', '+1234500002', 'tourop2@example.com'),
-('TourOp3', 'Company1', '+1234500003', 'tourop3@example.com'),
-('TourOp4', 'Company1', '+1234500004', 'tourop4@example.com'),
-('TourOp5', 'Company1', '+1234500005', 'tourop5@example.com');
+INSERT INTO users (first_name, last_name, phone, email,password_hash) VALUES
+('John', 'Doe', '+1234567890', 'john@example.com','$2a$12$opnyhNeWMgftMMHnN0gzV.CTDZywqv3.wwj1e4pXTHJefy9qDxMhG'),
+('Alice', 'Smith', '+1234567891', 'alice@example.com','$2a$12$opnyhNeWMgftMMHnN0gzV.CTDZywqv3.wwj1e4pXTHJefy9qDxMhG'),
+('Bob', 'Johnson', '+1234567892', 'bob@example.com','$2a$12$opnyhNeWMgftMMHnN0gzV.CTDZywqv3.wwj1e4pXTHJefy9qDxMhG'),
+('Emma', 'Brown', '+1234567893', 'emma@example.com','$2a$12$opnyhNeWMgftMMHnN0gzV.CTDZywqv3.wwj1e4pXTHJefy9qDxMhG'),
+('David', 'Wilson', '+1234567894', 'david@example.com','$2a$12$opnyhNeWMgftMMHnN0gzV.CTDZywqv3.wwj1e4pXTHJefy9qDxMhG'),
+('Sophia', 'Taylor', '+1234567895', 'sophia@example.com','$2a$12$opnyhNeWMgftMMHnN0gzV.CTDZywqv3.wwj1e4pXTHJefy9qDxMhG'),
+('Michael', 'Anderson', '+1234567896', 'michael@example.com','$2a$12$opnyhNeWMgftMMHnN0gzV.CTDZywqv3.wwj1e4pXTHJefy9qDxMhG'),
+('Olivia', 'Thomas', '+1234567897', 'olivia@example.com','$2a$12$opnyhNeWMgftMMHnN0gzV.CTDZywqv3.wwj1e4pXTHJefy9qDxMhG'),
+('William', 'Jackson', '+1234567898', 'william@example.com','$2a$12$opnyhNeWMgftMMHnN0gzV.CTDZywqv3.wwj1e4pXTHJefy9qDxMhG'),
+('Isabella', 'White', '+1234567899', 'isabella@example.com','$2a$12$opnyhNeWMgftMMHnN0gzV.CTDZywqv3.wwj1e4pXTHJefy9qDxMhG'),
+('TourOp1', 'Company', '+1234500001', 'tourop1@example.com','$2a$12$opnyhNeWMgftMMHnN0gzV.CTDZywqv3.wwj1e4pXTHJefy9qDxMhG'),
+('TourOp2', 'Company', '+1234500002', 'tourop2@example.com','$2a$12$opnyhNeWMgftMMHnN0gzV.CTDZywqv3.wwj1e4pXTHJefy9qDxMhG'),
+('TourOp3', 'Company1', '+1234500003', 'tourop3@example.com','$2a$12$opnyhNeWMgftMMHnN0gzV.CTDZywqv3.wwj1e4pXTHJefy9qDxMhG'),
+('TourOp4', 'Company1', '+1234500004', 'tourop4@example.com','$2a$12$opnyhNeWMgftMMHnN0gzV.CTDZywqv3.wwj1e4pXTHJefy9qDxMhG'),
+('TourOp5', 'Company1', '+1234500005', 'tourop5@example.com','$2a$12$opnyhNeWMgftMMHnN0gzV.CTDZywqv3.wwj1e4pXTHJefy9qDxMhG');
 
 
 -- Клиентские профили

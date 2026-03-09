@@ -1,6 +1,7 @@
 package by.sysoev.tourApp.controller;
 
 import by.sysoev.tourApp.DTO.RegisterUserDTO;
+import by.sysoev.tourApp.DTO.UserLoginDTO;
 import by.sysoev.tourApp.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -20,8 +21,14 @@ public class AuthController {
 
     @PostMapping("/register")
     public ResponseEntity<String> registerUser(@RequestBody RegisterUserDTO registerUserDTO){
-        log.info("Request to register user with email {}",registerUserDTO.getEmail());
-        userService.addUser(registerUserDTO);
-        return ResponseEntity.ok("success");
+        log.info("Request to register user with email {}",registerUserDTO.getUsername());
+        String token = userService.addUser(registerUserDTO);
+        return ResponseEntity.ok(token);
+    }
+
+    @PostMapping("login")
+    public ResponseEntity<String> loginUser(@RequestBody UserLoginDTO userLoginDTO){
+        String token = userService.loginUser(userLoginDTO);
+        return ResponseEntity.ok(token);
     }
 }

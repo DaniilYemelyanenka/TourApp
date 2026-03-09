@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler(RuntimeException.class)
-    public ResponseEntity<String> catchRuntimeException(RuntimeException exception){
-        log.error("something was wrong with message {}}", exception.getMessage());
-        return ResponseEntity.status(500).body(String.format("something was wrong with message %s}",exception.getMessage()));
-    }
+//    @ExceptionHandler(RuntimeException.class)
+//    public ResponseEntity<String> catchRuntimeException(RuntimeException exception){
+//        log.error("something was wrong with message {}}", exception.getMessage());
+//        return ResponseEntity.status(500).body(String.format("something was wrong with message %s}",exception));
+//    }
 }

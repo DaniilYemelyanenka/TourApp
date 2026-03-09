@@ -5,7 +5,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/tourDB
     username: user
-    password: user
+    password: pasword
     driver-class-name: org.postgresql.Driver
 
   sql:
@@ -18,3 +18,10 @@ spring:
 
 backup:
   path: backups
+
+jwt:
+  secret: L54OZNDg9xvTuB+kGTxzS+8QgZ6X6mQ0eGiM9MkYKPY=
+
+logging:
+  level:
+    org.springframework.security: DEBUG
