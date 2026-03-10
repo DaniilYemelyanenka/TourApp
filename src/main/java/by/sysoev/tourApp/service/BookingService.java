@@ -15,10 +15,10 @@ public class BookingService {
     private final BookingRepositoryImpl bookingRepository;
 
 
-    public void makeBooking(BookingDTO bookingDTO){
+    public void makeBooking(BookingDTO bookingDTO,String username){
         Long bookingId = bookingRepository.addBooking(
                 bookingDTO.getTourScheduleId(),
-                bookingDTO.getUserId(),
+                username,
                 bookingDTO.getPriceAtBooking()
                 );
 

@@ -5,7 +5,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/tourDB
     username: user
-    password: pasword
+    password: user
     driver-class-name: org.postgresql.Driver
 
   sql:

@@ -56,13 +56,13 @@ RETURNS TRIGGER
 LANGUAGE plpgsql
 AS '
 DECLARE
-    user_role_name TEXT
+    user_role_name TEXT;
 BEGIN
     SELECT
        r.name INTO user_role_name FROM roles r
        JOIN users_roles ur ON ur.role_id = r.id
        WHERE ur.user_id = NEW.id
-       LIMIT 1
+       LIMIT 1;
 
     IF user_role_name = ''CLIENT'' THEN
         INSERT INTO client_profiles (passport_number, date_of_birth, user_id)
@@ -80,14 +80,14 @@ END;';
 CREATE TRIGGER trg_create_profile
 AFTER INSERT ON users
 FOR EACH ROW
-EXECUTE FUNCTION create_profile_after_user_insert()
+EXECUTE FUNCTION create_profile_after_user_insert();
 
 --- триггер на запрет удаления тура с активным бронированием
 CREATE OR REPLACE FUNCTION prevent_delete_tour_with_bookings()
 RETURNS TRIGGER LANGUAGE plpgsql
 AS '
 DECLARE
-       active_count INT
+       active_count INT;
 BEGIN
     SELECT COUNT(*) INTO active_count
     FROM bookings b
@@ -99,7 +99,7 @@ BEGIN
     END IF;
 
     RETURN OLD;
-END;'
+END;';
 
 CREATE TRIGGER trg_prevent_delete_tour
 BEFORE DELETE ON tours

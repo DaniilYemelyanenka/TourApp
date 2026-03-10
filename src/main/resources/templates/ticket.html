@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+
+    <style>
+        body{
+            font-family: Arial;
+        }
+
+        .ticket{
+            border:2px solid #333;
+            padding:20px;
+            width:600px;
+        }
+
+        .header{
+            text-align:center;
+            font-size:24px;
+            font-weight:bold;
+        }
+
+        .row{
+            margin-top:10px;
+        }
+
+        .label{
+            font-weight:bold;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="ticket">
+
+    <div class="header">Tour Ticket</div>
+
+    <div class="row">
+        <span class="label">Client:</span> [[${username}]]
+    </div>
+
+    <div class="row">
+        <span class="label">Tour:</span> [[${tour}]]
+    </div>
+
+    <div class="row">
+        <span class="label">Persons count:</span> [[${bookingPassengersCount}]]
+    </div>
+
+    <div class="row">
+        <span class="label">Strat date:</span> [[${startDate}]]
+    </div>
+
+    <div class="row">
+        <span class="label">End date:</span> [[${endDate}]]
+    </div>
+
+    <div class="row">
+        <span class="label">Price:</span> [[${price}]] $
+    </div>
+
+</div>
+
+</body>
+</html>

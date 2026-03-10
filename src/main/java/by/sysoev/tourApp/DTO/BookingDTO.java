@@ -10,8 +10,6 @@ public class BookingDTO {
 
     private Long tourScheduleId;
 
-    private Long userId;
-
     private Double priceAtBooking;
 
     private List<Passenger> passengers;

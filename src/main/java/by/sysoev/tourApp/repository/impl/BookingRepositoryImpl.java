@@ -19,14 +19,15 @@ public class BookingRepositoryImpl implements BookingRepository {
     private final JdbcTemplate jdbcTemplate;
 
     @Override
-    public Long addBooking(Long tourSchedule,Long userID,Double priceAtBooking) {
-        log.debug("Insert booking for user with id:{} and tour schedule with id:{}",userID,tourSchedule);
+    public Long addBooking(Long tourSchedule,String username,Double priceAtBooking) {
+        log.debug("Insert booking for user with username:{} and tour schedule with id:{}",username,tourSchedule);
         return jdbcTemplate.queryForObject("""
                    INSERT INTO bookings
-                   (tour_schedule_id,user_id,price_at_booking) VALUES (?,?,?)
+                    (tour_schedule_id,user_idб price_at_booking)
+                   VALUES (?,(SELECT id FROM users WHERE username = ?),?)
                    RETURNING id
                    """
-                ,Long.class,tourSchedule,userID,priceAtBooking);
+                ,Long.class,tourSchedule,username,priceAtBooking);
 
     }
 
