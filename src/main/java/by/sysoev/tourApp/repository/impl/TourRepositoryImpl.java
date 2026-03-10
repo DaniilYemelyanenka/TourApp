@@ -108,7 +108,7 @@ public class TourRepositoryImpl implements TourRepository {
                     STRING_AGG(s.name, ', ') AS services
                 FROM tours t 
                 JOIN tour_services ts ON t.id = ts.tour_id
-                JOIN services s ON ts.service_id = s.id
+                        JOIN services s ON ts.service_id = s.id
                 GROUP BY t.name
                 ORDER BY t.name;
                 """;
@@ -150,6 +150,30 @@ public class TourRepositoryImpl implements TourRepository {
                 rs.getInt("booking_count"),
                 rs.getInt("popularity_rank")
         ));
+    }
+
+    @Override
+    public List<ShortTour> getAllToursShortcut() {
+        String sql = "SELECT id,name,rating FROM tours";
+        return jdbcTemplate.query(sql,(rs,rowNum) -> new ShortTour(
+                rs.getLong("id"),
+                rs.getString("name"),
+                rs.getDouble("rating")
+        ));
+    }
+
+    @Override
+    public void addTour(Long id, CreateTourDTO dto) {
+        String sql =  "INSERT INTO tours (name,hotel_id,tour_type_id,transport_id,tour_operator_id) VALUES (?,?,?,?,?)";
+        int row  = jdbcTemplate.update(sql,dto.getName(),dto.getHotelId(),dto.getTourTypeId(),dto.getTransportId(),id);
+
+        if(row == 0) throw new RuntimeException("tour is not added");
+    }
+
+    @Override
+    public void deleteTour(Long id) {
+        String sql = "DELETE FROM tours WHERE id = ?;";
+        jdbcTemplate.update(sql,id);
     }
 
 

@@ -1,7 +1,9 @@
 package by.sysoev.tourApp.service;
 
 import by.sysoev.tourApp.DTO.*;
+import by.sysoev.tourApp.entity.User;
 import by.sysoev.tourApp.repository.impl.TourRepositoryImpl;
+import by.sysoev.tourApp.repository.impl.UserRepositoryImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +14,8 @@ import java.util.List;
 public class TourService {
 
     private final TourRepositoryImpl tourRepository;
+
+    private final UserRepositoryImpl userRepository;
 
     public TourDTO getTourInfoById(Long tourId){
         return tourRepository.findTourInfo(tourId).orElseThrow(() -> new RuntimeException("Tour Info not found"));
@@ -32,5 +36,14 @@ public class TourService {
     public List<TopTourDTO> getTop3Tours(){
         return tourRepository.getTop3Tours();
     }
+    public List<ShortTour> getToursShortcut()  {return tourRepository.getAllToursShortcut();}
 
+    public void addTour(String email,CreateTourDTO dto){
+        User user = userRepository.getUserByEmail(email).get();
+        tourRepository.addTour(user.getId(),dto);
+    }
+
+    public void deleteTour(Long id) {
+        tourRepository.deleteTour(id);
+    }
 }

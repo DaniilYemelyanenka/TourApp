@@ -2,6 +2,7 @@ package by.sysoev.tourApp.repository.impl;
 
 import by.sysoev.tourApp.DTO.LastBookingUsersDTO;
 import by.sysoev.tourApp.DTO.PaymentsStatsDTO;
+import by.sysoev.tourApp.DTO.UpdateClientInfoDTO;
 import by.sysoev.tourApp.repository.ClientRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -70,5 +71,36 @@ public class ClientRepositoryImpl implements ClientRepository {
                 rs.getString("last_name"),
                 rs.getDate("last_booking_date")
         ));
+    }
+
+    @Override
+    public void updateInfo(Long userId, UpdateClientInfoDTO dto) {
+
+        String updateUserSql = """
+        UPDATE users
+        SET first_name = ?, last_name = ?, phone = ?
+        WHERE id = ?
+        """;
+
+        jdbcTemplate.update(
+                updateUserSql,
+                dto.getFirstName(),
+                dto.getLastName(),
+                dto.getPhone(),
+                userId
+        );
+
+        String updateClientSql = """
+        UPDATE client_profiles
+        SET passport_number = ?, date_of_birth = ?
+        WHERE user_id = ?
+        """;
+
+        jdbcTemplate.update(
+                updateClientSql,
+                dto.getPassportNumber(),
+                dto.getDateOfBirth(),
+                userId
+        );
     }
 }

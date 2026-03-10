@@ -1,6 +1,7 @@
 package by.sysoev.tourApp.repository.impl;
 
 import by.sysoev.tourApp.DTO.TourOperatorStatsDTO;
+import by.sysoev.tourApp.DTO.UpdateTourOperatorDTO;
 import by.sysoev.tourApp.repository.TourOperatorRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -43,5 +44,36 @@ public class TourOperatorRepositoryImpl implements TourOperatorRepository {
                 rs.getInt("total_revenue"),
                 rs.getInt("avg_payment")
         ));
+    }
+
+    @Override
+    public void updateTourOperator(Long userId,UpdateTourOperatorDTO dto) {
+        String updateUserSql = """
+        UPDATE users
+        SET first_name = ?, last_name = ?, phone = ?
+        WHERE id = ?
+        """;
+
+        jdbcTemplate.update(
+                updateUserSql,
+                dto.getFirstName(),
+                dto.getLastName(),
+                dto.getPhone(),
+                userId
+        );
+
+
+        String updateOperatorSql = """
+        UPDATE tour_operator_profiles
+        SET company_name = ?, description = ?
+        WHERE user_id = ?
+        """;
+
+        jdbcTemplate.update(
+                updateOperatorSql,
+                dto.getCompanyName(),
+                dto.getDescription(),
+                userId
+        );
     }
 }

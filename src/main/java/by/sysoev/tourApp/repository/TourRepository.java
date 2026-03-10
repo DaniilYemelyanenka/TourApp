@@ -16,4 +16,10 @@ public interface TourRepository {
     List<TourServicesDTO> getToursServices();
 
     List<TopTourDTO> getTop3Tours();
+
+    List<ShortTour> getAllToursShortcut();
+
+    void addTour(Long id,CreateTourDTO dto);
+
+    void deleteTour(Long id);
 }

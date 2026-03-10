@@ -60,4 +60,22 @@ public class TourController {
         List<TopTourDTO> topList = tourService.getTop3Tours();
         return ResponseEntity.status(HttpStatus.OK).body(topList);
     }
+
+    @GetMapping("shortcut/tours")
+    public ResponseEntity<List<ShortTour>> getShortcutForTours(){
+        List<ShortTour> list = tourService.getToursShortcut();
+        return ResponseEntity.ok(list);
+    }
+
+    @PostMapping("add")
+    public ResponseEntity<String> addTour(@AuthenticationPrincipal UserPrincipals userPrincipals,@RequestBody CreateTourDTO dto){
+        tourService.addTour(userPrincipals.getUsername(),dto);
+        return ResponseEntity.ok("success");
+    }
+
+    @DeleteMapping("delete")
+    public ResponseEntity<String> deleteTour(@PathVariable Long id){
+        tourService.deleteTour(id);
+        return ResponseEntity.ok("deleted");
+    }
 }

@@ -130,6 +130,7 @@ CREATE TABLE transport (
 CREATE TABLE tours (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
+    rating NUMERIC(3,2) DEFAULT 0,
     hotel_id BIGINT NOT NULL,
     tour_type_id INT NOT NULL,
     transport_id INT NOT NULL,

@@ -3,15 +3,16 @@ package by.sysoev.tourApp.controller;
 
 import by.sysoev.tourApp.DTO.LastBookingUsersDTO;
 import by.sysoev.tourApp.DTO.PaymentsStatsDTO;
+import by.sysoev.tourApp.DTO.UpdateClientInfoDTO;
+import by.sysoev.tourApp.entity.UserPrincipals;
 import by.sysoev.tourApp.service.ClientService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
 import java.util.List;
@@ -38,5 +39,12 @@ public class ClientController {
         log.info("Request for for clients last bookings");
         List<LastBookingUsersDTO> list = clientService.getLastBookingUsers();
         return ResponseEntity.status(HttpStatus.OK).body(list);
+    }
+
+    @PutMapping()
+    public ResponseEntity<String> updateClientInfo(@AuthenticationPrincipal UserPrincipals userPrincipals,
+                                                   @RequestBody UpdateClientInfoDTO dto){
+        clientService.updateClientInfo(userPrincipals.getUsername(),dto);
+        return ResponseEntity.ok("success");
     }
 }

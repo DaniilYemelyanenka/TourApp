@@ -1,6 +1,8 @@
 package by.sysoev.tourApp.repository.impl;
 
+import by.sysoev.tourApp.DTO.LocationDTO;
 import by.sysoev.tourApp.DTO.MostPopularCityDTO;
+import by.sysoev.tourApp.entity.Location;
 import by.sysoev.tourApp.repository.CityRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -37,5 +39,33 @@ public class CityRepositoryImpl implements CityRepository{
                 rs.getString("city_name"),
                 rs.getInt("bookings_count")
         ));
+    }
+
+    @Override
+    public List<Location> getAll() {
+        String sql = """
+                SELECT 
+                    l.id,
+                    l.city_name,
+                    c.name
+                FROM locations l
+                JOIN climats c ON c.id = l.climate_id
+                """;
+
+
+        return jdbcTemplate.query(sql,(rs,rowNum)-> new Location(
+                rs.getLong("id"),
+                rs.getString("city_name"),
+                rs.getString("name")
+        ));
+    }
+
+    @Override
+    public void add(LocationDTO dto) {
+        String sql = """
+                 INSERT INTO locations (city_name,climate_id) VALUES (?,?)
+                """;
+        int row  = jdbcTemplate.update(sql,dto.getCityName(),dto.getClimateId());
+        if(row == 0) throw new RuntimeException("location not added");
     }
 }
