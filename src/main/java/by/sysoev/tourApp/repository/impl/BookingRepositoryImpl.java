@@ -23,7 +23,7 @@ public class BookingRepositoryImpl implements BookingRepository {
         log.debug("Insert booking for user with username:{} and tour schedule with id:{}",username,tourSchedule);
         return jdbcTemplate.queryForObject("""
                    INSERT INTO bookings
-                    (tour_schedule_id,user_idб price_at_booking)
+                    (tour_schedule_id,user_id, price_at_booking)
                    VALUES (?,(SELECT id FROM users WHERE username = ?),?)
                    RETURNING id
                    """

@@ -41,7 +41,7 @@ public class ClientController {
         return ResponseEntity.status(HttpStatus.OK).body(list);
     }
 
-    @PutMapping()
+    @PutMapping("me/updaate")
     public ResponseEntity<String> updateClientInfo(@AuthenticationPrincipal UserPrincipals userPrincipals,
                                                    @RequestBody UpdateClientInfoDTO dto){
         clientService.updateClientInfo(userPrincipals.getUsername(),dto);
