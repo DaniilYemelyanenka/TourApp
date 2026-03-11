@@ -11,7 +11,7 @@ import java.util.List;
 @RestController
 @RequestMapping("api/v1/tourSchedule")
 @RequiredArgsConstructor
-public class TourSchedulerControleer {
+public class TourSchedulerControler {
 
     private final TourScheduleService tourScheduleService;
 

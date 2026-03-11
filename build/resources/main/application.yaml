@@ -14,6 +14,8 @@ spring:
       schema-locations:
         - 'classpath:shema.sql'
         - 'classpath:triggers.sql'
+        - 'classpath:functions.sql'
+        -  'classpath:procedures.sql'
       encoding: 'UTF-8'
 
 backup:

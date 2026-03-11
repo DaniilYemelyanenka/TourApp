@@ -12,6 +12,8 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.util.Map;
+
 @Slf4j
 @Service
 @RequiredArgsConstructor
@@ -31,8 +33,10 @@ public class UserService {
         return authenticate(userLoginDTO.getUsername(),userLoginDTO.getPassword());
     }
 
-    private String authenticate(String username,String password) throws AuthenticationException {
+    private Map<String,String> authenticate(String username, String password) throws AuthenticationException {
         String token = null;
+        String roles = null;
+        Map<>
 
         Authentication auth = authenticationManager
                 .authenticate(
@@ -41,8 +45,10 @@ public class UserService {
 
         if(auth.isAuthenticated()){
             token = jwtService.generateToken(username);
+            roles = auth.getAuthorities().toString();
+
         }
 
-        return token;
+        return map;
     }
 }

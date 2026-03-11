@@ -76,4 +76,28 @@ public class TourOperatorRepositoryImpl implements TourOperatorRepository {
                 userId
         );
     }
+
+    @Override
+    public UpdateTourOperatorDTO find(Long id) {
+        String sql = """
+                SELECT
+                    top.company_name,
+                    top.description,
+                    u.first_name,
+                    u.last_name,
+                    u.phone
+                FROM tour_operator_profiles top
+                JOIN users u ON u.id = top.user_id
+                WHERE top.id = ?;
+                """;
+        return jdbcTemplate.queryForObject(sql,(rs,rowNum) -> {
+             UpdateTourOperatorDTO dto = new UpdateTourOperatorDTO();
+             dto.setCompanyName(rs.getString("company_name"));
+             dto.setDescription(rs.getString("description"));
+             dto.setFirstName(rs.getString("first_name"));
+             dto.setLastName(rs.getString("last_name"));
+             dto.setPhone(rs.getString("phone"));
+             return dto;
+             },id);
+    }
 }

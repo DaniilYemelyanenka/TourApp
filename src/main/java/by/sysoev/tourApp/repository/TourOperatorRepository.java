@@ -10,4 +10,6 @@ public interface TourOperatorRepository {
     List<TourOperatorStatsDTO> getTourOperatorsStats();
 
     void updateTourOperator(Long userId,UpdateTourOperatorDTO dto);
+
+    UpdateTourOperatorDTO find(Long id);
 }

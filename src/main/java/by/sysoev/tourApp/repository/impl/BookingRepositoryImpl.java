@@ -1,6 +1,8 @@
 package by.sysoev.tourApp.repository.impl;
 
+import by.sysoev.tourApp.DTO.BookingDTO;
 import by.sysoev.tourApp.DTO.BookingSeatsStatsDTO;
+import by.sysoev.tourApp.DTO.ShorBookingDTO;
 import by.sysoev.tourApp.entity.Passenger;
 import by.sysoev.tourApp.repository.BookingRepository;
 import lombok.RequiredArgsConstructor;
@@ -68,5 +70,28 @@ public class BookingRepositoryImpl implements BookingRepository {
                 rs.getInt("booked_places"),
                 rs.getInt("available_places")
         ));
+    }
+
+    @Override
+    public List<ShorBookingDTO> getAllByUserId(Long id) {
+        String sql = """
+                        SELECT 
+                            t.name AS tour_name,
+                            ts.start_date,
+                            ts.end_date,
+                            ps.status
+                        FROM bookings b
+                        JOIN tour_schedule ts ON b.tour_schedule_id = ts.id
+                        JOIN tours t ON t.id = ts.tour_id
+                        JOIN payments p ON p.booking_id = b.id
+                        JOIN payment_status ps ON p.payments_status_id = ps.id
+                        WHERE b.user_id = ?;
+                     """;
+        return jdbcTemplate.query(sql,(rs, rowNum) -> new ShorBookingDTO(
+                rs.getString("tour_name"),
+                rs.getDate("start_date"),
+                rs.getDate("end_date"),
+                rs.getString("status")
+        ),id);
     }
 }

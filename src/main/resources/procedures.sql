@@ -2,7 +2,7 @@
 CREATE OR REPLACE PROCEDURE create_booking(
     p_user_id BIGINT,
     p_tour_schedule_id BIGINT,
-    p_pricae_at_booking NUMERIC(10,2)
+    p_price_at_booking NUMERIC(10,2)
 )
 LANGUAGE plpgsql
 AS '
@@ -16,7 +16,7 @@ INSERT INTO bookings(
 VALUES(
           p_tour_schedule_id,
           p_user_id,
-          1,
+          1
       );
 END;';
 

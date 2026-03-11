@@ -2,6 +2,7 @@ package by.sysoev.tourApp.controller;
 
 import by.sysoev.tourApp.DTO.TourOperatorStatsDTO;
 import by.sysoev.tourApp.DTO.UpdateTourOperatorDTO;
+import by.sysoev.tourApp.entity.User;
 import by.sysoev.tourApp.entity.UserPrincipals;
 import by.sysoev.tourApp.service.TourOperatorService;
 import lombok.RequiredArgsConstructor;
@@ -23,7 +24,7 @@ public class TourOperatorController {
     private final TourOperatorService tourOperatorService;
 
     @PreAuthorize("hasRole('ADMIN')")
-    @GetMapping()
+    @GetMapping("stats")
     public ResponseEntity<List<TourOperatorStatsDTO>> getTourOperatorsStats(){
         log.info("Request for tour operators statistics ");
         List<TourOperatorStatsDTO> stats = tourOperatorService.getTourOperatorsStats();
@@ -36,6 +37,11 @@ public class TourOperatorController {
         log.info("Request to update tourOperator: {} info",userPrincipals.getUsername());
         tourOperatorService.updateTourOperatorInfo(userPrincipals.getUsername(),updateTourOperatorDTO);
         return ResponseEntity.ok("success");
+    }
+
+    @GetMapping()
+    public ResponseEntity<UpdateTourOperatorDTO> getTourOperatorInfo(@AuthenticationPrincipal User user){
+        return ResponseEntity.ok(tourOperatorService.find(user.getId()));
     }
 
 

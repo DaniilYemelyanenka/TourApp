@@ -1,5 +1,6 @@
 package by.sysoev.tourApp.DTO;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data

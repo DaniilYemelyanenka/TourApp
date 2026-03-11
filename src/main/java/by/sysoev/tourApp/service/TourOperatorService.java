@@ -2,7 +2,6 @@ package by.sysoev.tourApp.service;
 
 import by.sysoev.tourApp.DTO.TourOperatorStatsDTO;
 import by.sysoev.tourApp.DTO.UpdateTourOperatorDTO;
-import by.sysoev.tourApp.DTO.UpdateUserDTO;
 import by.sysoev.tourApp.entity.User;
 import by.sysoev.tourApp.repository.impl.TourOperatorRepositoryImpl;
 import by.sysoev.tourApp.repository.impl.UserRepositoryImpl;
@@ -27,5 +26,9 @@ public class TourOperatorService {
         User user = userRepository.getUserByEmail(email)
                 .orElseThrow(() -> new UsernameNotFoundException("User with this id not found"));
         tourOperatorRepository.updateTourOperator(user.getId(),updateTourOperatorDTO);
+    }
+
+    public UpdateTourOperatorDTO find(Long id) {
+        return tourOperatorRepository.find(id);
     }
 }

@@ -18,8 +18,9 @@ public class paymentController {
         return ResponseEntity.ok(Double.parseDouble("1234"));
     }
 
-    @PostMapping("{id}/create")
-    public ResponseEntity<String> createPaymentForBooking(@PathVariable Long id){
+   @PostMapping("{bookingId}/make")
+    public ResponseEntity<String> confirmPayment(@PathVariable Long bookingId){
+        service.confirmPayment(bookingId);
         return ResponseEntity.ok("success");
-    }
+   }
 }

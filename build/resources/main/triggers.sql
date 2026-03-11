@@ -105,3 +105,28 @@ CREATE TRIGGER trg_prevent_delete_tour
 BEFORE DELETE ON tours
 FOR EACH ROW
 EXECUTE FUNCTION prevent_delete_tour_with_bookings();
+
+
+--- триггер на автоматический пересчет рейтинга при добавлении отзыва
+CREATE OR REPLACE FUNCTION update_tour_rating()
+RETURNS TRIGGER LANGUAGE plpgsql
+AS  '
+BEGIN
+    UPDATE tours
+    SET rating = (
+        SELECT COALESCE(AVG(mark),0)
+        FROM tour_reviews
+        WHERE tour_id = COALESCE(NEW.tour_id, OLD.tour_id)
+       )
+    WHERE id = COALESCE(NEW.tour_id, OLD.tour_id);
+
+    RETURN NULL;
+END;';
+
+CREATE TRIGGER trg_update_tour_rating
+AFTER INSERT OR UPDATE OR DELETE
+ON tour_reviews
+FOR EACH ROW
+EXECUTE FUNCTION update_tour_rating();
+
+

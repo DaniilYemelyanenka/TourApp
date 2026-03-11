@@ -1,6 +1,6 @@
 --- ффункция подсччета полной стоймости бронирования
 CREATE OR REPLACE FUNCTION calculate_total_booking(p_booking_id BIGINT)
-RETURN NUMERIC LANGUAGE plpgsql
+RETURNS NUMERIC LANGUAGE plpgsql
 AS '
     DECLARE
        passengers_count INT;
@@ -18,7 +18,7 @@ AS '
         WHERE b.id = p_booking_id;
 
         RETURN  passengers_count * price_per_person;
-    END;'
+    END;';
 
 ---  функция получения свободных мест на тур
 CREATE OR REPLACE FUNCTION get_available_seats(p_tour_schedule_id BIGINT)
@@ -43,7 +43,7 @@ AS '
 
     RETURN max_capacity - booked_count;
 
-    END;'
+    END;';
 
 -- функция среднего рейтинга тура
 CREATE OR REPLACE FUNCTION get_tour_average_rating(p_tour_id BIGINT)

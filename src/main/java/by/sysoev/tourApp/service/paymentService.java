@@ -13,4 +13,13 @@ public class paymentService {
     public Double getBookingTotalSumm(Long id) {
         return repository.getBookingTotoalSumm(id);
     }
+
+    public void createPayment(Long id) {
+        Double totalSumm = getBookingTotalSumm(id);
+        repository.createPayment(id,totalSumm);
+    }
+
+    public void confirmPayment(Long bookingId) {
+        repository.confirmPayment(bookingId);
+    }
 }

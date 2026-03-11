@@ -3246,3 +3246,1690 @@ org.xml.sax.SAXParseException; lineNumber: 52; columnNumber: 30; Open quote is e
 2026-03-10 16:42:12 [http-nio-8080-exec-1] WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/api/v1/ticket' (previous null). Performing CorsConfiguration lookup. This is logged once only at WARN level, and every time at TRACE.
 2026-03-10 16:52:22 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 2026-03-10 16:52:22 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-11 21:35:34 [main] INFO  b.sysoev.tourApp.TourAppApplication - Starting TourAppApplication using Java 17.0.14 with PID 56823 (/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main started by whitesmurf in /Users/whitesmurf/Desktop/projects/tourApp)
+2026-03-11 21:35:34 [main] INFO  b.sysoev.tourApp.TourAppApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-11 21:35:35 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-11 21:35:35 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-11 21:35:35 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-11 21:35:35 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-11 21:35:36 [main] ERROR o.s.b.t.s.DeferredServletContainerInitializers - Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'jwtFilter': Unsatisfied dependency expressed through field 'userDetailsService': Error creating bean with name 'myUserDetailsService': Unsatisfied dependency expressed through field 'userRepository': Error creating bean with name 'userRepositoryImpl' defined in file [/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main/by/sysoev/tourApp/repository/impl/UserRepositoryImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'jdbcTemplate' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/JdbcTemplateConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of JdbcTemplate bean 'jdbcTemplate': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute database script
+2026-03-11 21:35:36 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-03-11 21:35:36 [main] WARN  o.s.b.w.s.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2026-03-11 21:35:36 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:167)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:615)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at by.sysoev.tourApp.TourAppApplication.main(TourAppApplication.java:14)
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:150)
+	at org.springframework.boot.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:110)
+	at org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:408)
+	at org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:166)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:190)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:164)
+	... 8 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jwtFilter': Unsatisfied dependency expressed through field 'userDetailsService': Error creating bean with name 'myUserDetailsService': Unsatisfied dependency expressed through field 'userRepository': Error creating bean with name 'userRepositoryImpl' defined in file [/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main/by/sysoev/tourApp/repository/impl/UserRepositoryImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'jdbcTemplate' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/JdbcTemplateConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of JdbcTemplate bean 'jdbcTemplate': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute database script
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:767)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:748)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:493)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1446)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:231)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:185)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:180)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:165)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:97)
+	at org.springframework.boot.web.context.servlet.WebApplicationContextInitializer.initialize(WebApplicationContextInitializer.java:53)
+	at org.springframework.boot.tomcat.servlet.DeferredServletContainerInitializers.onStartup(DeferredServletContainerInitializers.java:55)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4416)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1162)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1158)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:81)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:714)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:780)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1162)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1158)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:81)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:714)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:201)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:410)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:864)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:435)
+	at org.springframework.boot.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:131)
+	... 13 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'myUserDetailsService': Unsatisfied dependency expressed through field 'userRepository': Error creating bean with name 'userRepositoryImpl' defined in file [/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main/by/sysoev/tourApp/repository/impl/UserRepositoryImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'jdbcTemplate' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/JdbcTemplateConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of JdbcTemplate bean 'jdbcTemplate': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute database script
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:767)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:748)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:493)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1446)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:229)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1762)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1651)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:764)
+	... 54 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userRepositoryImpl' defined in file [/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main/by/sysoev/tourApp/repository/impl/UserRepositoryImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'jdbcTemplate' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/JdbcTemplateConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of JdbcTemplate bean 'jdbcTemplate': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute database script
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1382)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1221)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:229)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1762)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1651)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:764)
+	... 68 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jdbcTemplate' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/JdbcTemplateConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of JdbcTemplate bean 'jdbcTemplate': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute database script
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveBean(DefaultListableBeanFactory.java:1225)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1704)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1651)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:912)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 81 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute database script
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1817)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:309)
+	... 87 common frames omitted
+Caused by: org.springframework.jdbc.datasource.init.UncategorizedScriptException: Failed to execute database script
+	at org.springframework.jdbc.datasource.init.DatabasePopulatorUtils.execute(DatabasePopulatorUtils.java:67)
+	at org.springframework.boot.jdbc.init.DataSourceScriptDatabaseInitializer.runScripts(DataSourceScriptDatabaseInitializer.java:87)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.runScripts(AbstractScriptDatabaseInitializer.java:159)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.applyScripts(AbstractScriptDatabaseInitializer.java:120)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.applySchemaScripts(AbstractScriptDatabaseInitializer.java:109)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.initializeDatabase(AbstractScriptDatabaseInitializer.java:87)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.afterPropertiesSet(AbstractScriptDatabaseInitializer.java:77)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1864)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1813)
+	... 94 common frames omitted
+Caused by: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:84)
+	at org.springframework.jdbc.datasource.init.DatabasePopulatorUtils.execute(DatabasePopulatorUtils.java:52)
+	... 102 common frames omitted
+Caused by: org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:373)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:57)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:290)
+	at org.postgresql.Driver.makeConnection(Driver.java:448)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111)
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:160)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:118)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:81)
+	... 103 common frames omitted
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:261)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:122)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:146)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:289)
+	... 117 common frames omitted
+2026-03-11 21:36:18 [main] INFO  b.sysoev.tourApp.TourAppApplication - Starting TourAppApplication using Java 17.0.14 with PID 56848 (/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main started by whitesmurf in /Users/whitesmurf/Desktop/projects/tourApp)
+2026-03-11 21:36:18 [main] INFO  b.sysoev.tourApp.TourAppApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-11 21:36:19 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-11 21:36:19 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-11 21:36:19 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-11 21:36:19 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-11 21:36:20 [main] ERROR o.s.b.t.s.DeferredServletContainerInitializers - Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'jwtFilter': Unsatisfied dependency expressed through field 'userDetailsService': Error creating bean with name 'myUserDetailsService': Unsatisfied dependency expressed through field 'userRepository': Error creating bean with name 'userRepositoryImpl' defined in file [/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main/by/sysoev/tourApp/repository/impl/UserRepositoryImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'jdbcTemplate' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/JdbcTemplateConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of JdbcTemplate bean 'jdbcTemplate': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute database script
+2026-03-11 21:36:20 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-03-11 21:36:20 [main] WARN  o.s.b.w.s.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2026-03-11 21:36:20 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:167)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:615)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at by.sysoev.tourApp.TourAppApplication.main(TourAppApplication.java:14)
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:150)
+	at org.springframework.boot.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:110)
+	at org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:408)
+	at org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:166)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:190)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:164)
+	... 8 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jwtFilter': Unsatisfied dependency expressed through field 'userDetailsService': Error creating bean with name 'myUserDetailsService': Unsatisfied dependency expressed through field 'userRepository': Error creating bean with name 'userRepositoryImpl' defined in file [/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main/by/sysoev/tourApp/repository/impl/UserRepositoryImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'jdbcTemplate' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/JdbcTemplateConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of JdbcTemplate bean 'jdbcTemplate': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute database script
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:767)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:748)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:493)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1446)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:231)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:185)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:180)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:165)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:97)
+	at org.springframework.boot.web.context.servlet.WebApplicationContextInitializer.initialize(WebApplicationContextInitializer.java:53)
+	at org.springframework.boot.tomcat.servlet.DeferredServletContainerInitializers.onStartup(DeferredServletContainerInitializers.java:55)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4416)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1162)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1158)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:81)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:714)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:780)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1162)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1158)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:81)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:714)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:201)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:410)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:864)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:435)
+	at org.springframework.boot.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:131)
+	... 13 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'myUserDetailsService': Unsatisfied dependency expressed through field 'userRepository': Error creating bean with name 'userRepositoryImpl' defined in file [/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main/by/sysoev/tourApp/repository/impl/UserRepositoryImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'jdbcTemplate' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/JdbcTemplateConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of JdbcTemplate bean 'jdbcTemplate': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute database script
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:767)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:748)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:493)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1446)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:229)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1762)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1651)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:764)
+	... 54 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userRepositoryImpl' defined in file [/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main/by/sysoev/tourApp/repository/impl/UserRepositoryImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'jdbcTemplate' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/JdbcTemplateConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of JdbcTemplate bean 'jdbcTemplate': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute database script
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1382)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1221)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:229)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1762)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1651)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:764)
+	... 68 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jdbcTemplate' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/JdbcTemplateConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of JdbcTemplate bean 'jdbcTemplate': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute database script
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveBean(DefaultListableBeanFactory.java:1225)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1704)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1651)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:912)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 81 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute database script
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1817)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:309)
+	... 87 common frames omitted
+Caused by: org.springframework.jdbc.datasource.init.UncategorizedScriptException: Failed to execute database script
+	at org.springframework.jdbc.datasource.init.DatabasePopulatorUtils.execute(DatabasePopulatorUtils.java:67)
+	at org.springframework.boot.jdbc.init.DataSourceScriptDatabaseInitializer.runScripts(DataSourceScriptDatabaseInitializer.java:87)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.runScripts(AbstractScriptDatabaseInitializer.java:159)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.applyScripts(AbstractScriptDatabaseInitializer.java:120)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.applySchemaScripts(AbstractScriptDatabaseInitializer.java:109)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.initializeDatabase(AbstractScriptDatabaseInitializer.java:87)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.afterPropertiesSet(AbstractScriptDatabaseInitializer.java:77)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1864)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1813)
+	... 94 common frames omitted
+Caused by: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:84)
+	at org.springframework.jdbc.datasource.init.DatabasePopulatorUtils.execute(DatabasePopulatorUtils.java:52)
+	... 102 common frames omitted
+Caused by: org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:373)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:57)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:290)
+	at org.postgresql.Driver.makeConnection(Driver.java:448)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111)
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:160)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:118)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:81)
+	... 103 common frames omitted
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:261)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:122)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:146)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:289)
+	... 117 common frames omitted
+2026-03-11 21:37:00 [main] INFO  b.sysoev.tourApp.TourAppApplication - Starting TourAppApplication using Java 17.0.14 with PID 57293 (/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main started by whitesmurf in /Users/whitesmurf/Desktop/projects/tourApp)
+2026-03-11 21:37:00 [main] INFO  b.sysoev.tourApp.TourAppApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-11 21:37:01 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-11 21:37:01 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-11 21:37:01 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-11 21:37:01 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-11 21:37:01 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@35cec305
+2026-03-11 21:37:01 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-11 21:37:02 [main] ERROR o.s.b.t.s.DeferredServletContainerInitializers - Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'jwtFilter': Unsatisfied dependency expressed through field 'userDetailsService': Error creating bean with name 'myUserDetailsService': Unsatisfied dependency expressed through field 'userRepository': Error creating bean with name 'userRepositoryImpl' defined in file [/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main/by/sysoev/tourApp/repository/impl/UserRepositoryImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'jdbcTemplate' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/JdbcTemplateConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of JdbcTemplate bean 'jdbcTemplate': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute SQL script statement #9 of class path resource [triggers.sql]: CREATE OR REPLACE FUNCTION update_tour_rating() RETURN TRIGGER LANGUAGE plpgsql AS '
+BEGIN
+    UPDATE tours
+    SET rating = (
+        SELECT COALESCE(AVG(mark),0)
+        FROM tour_reviews
+        WHERE tour_id = COALESCE(NEW.tour_id, OLD.tour_id)
+       )
+    WHERE id = COALESCE(NEW.tour_id, OLD.tour_id);
+
+    RETURN NULL;
+END;' CREATE TRIGGER trg_update_tour_rating AFTER INSERT OR UPDATE OR DELETE ON tour_reviews FOR EACH ROW EXECUTE FUNCTION update_tour_rating()
+2026-03-11 21:37:02 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-03-11 21:37:02 [main] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [HikariPool-1:housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.14/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.14/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.14/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1679)
+ java.base@17.0.14/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.14/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.14/java.lang.Thread.run(Thread.java:840)
+2026-03-11 21:37:02 [main] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [HikariPool-1:connection-adder] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.14/java.lang.Thread.sleep(Native Method)
+ app//com.zaxxer.hikari.util.UtilityElf.quietlySleep(UtilityElf.java:80)
+ app//com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:757)
+ app//com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731)
+ java.base@17.0.14/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+ java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.14/java.lang.Thread.run(Thread.java:840)
+2026-03-11 21:37:02 [main] WARN  o.s.b.w.s.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2026-03-11 21:37:02 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-11 21:37:02 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-11 21:37:02 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:167)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:615)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at by.sysoev.tourApp.TourAppApplication.main(TourAppApplication.java:14)
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:150)
+	at org.springframework.boot.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:110)
+	at org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:408)
+	at org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:166)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:190)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:164)
+	... 8 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jwtFilter': Unsatisfied dependency expressed through field 'userDetailsService': Error creating bean with name 'myUserDetailsService': Unsatisfied dependency expressed through field 'userRepository': Error creating bean with name 'userRepositoryImpl' defined in file [/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main/by/sysoev/tourApp/repository/impl/UserRepositoryImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'jdbcTemplate' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/JdbcTemplateConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of JdbcTemplate bean 'jdbcTemplate': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute SQL script statement #9 of class path resource [triggers.sql]: CREATE OR REPLACE FUNCTION update_tour_rating() RETURN TRIGGER LANGUAGE plpgsql AS '
+BEGIN
+    UPDATE tours
+    SET rating = (
+        SELECT COALESCE(AVG(mark),0)
+        FROM tour_reviews
+        WHERE tour_id = COALESCE(NEW.tour_id, OLD.tour_id)
+       )
+    WHERE id = COALESCE(NEW.tour_id, OLD.tour_id);
+
+    RETURN NULL;
+END;' CREATE TRIGGER trg_update_tour_rating AFTER INSERT OR UPDATE OR DELETE ON tour_reviews FOR EACH ROW EXECUTE FUNCTION update_tour_rating()
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:767)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:748)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:493)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1446)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:231)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:185)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:180)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:165)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:97)
+	at org.springframework.boot.web.context.servlet.WebApplicationContextInitializer.initialize(WebApplicationContextInitializer.java:53)
+	at org.springframework.boot.tomcat.servlet.DeferredServletContainerInitializers.onStartup(DeferredServletContainerInitializers.java:55)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4416)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1162)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1158)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:81)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:714)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:780)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1162)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1158)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:81)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:714)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:201)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:410)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:864)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:435)
+	at org.springframework.boot.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:131)
+	... 13 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'myUserDetailsService': Unsatisfied dependency expressed through field 'userRepository': Error creating bean with name 'userRepositoryImpl' defined in file [/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main/by/sysoev/tourApp/repository/impl/UserRepositoryImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'jdbcTemplate' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/JdbcTemplateConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of JdbcTemplate bean 'jdbcTemplate': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute SQL script statement #9 of class path resource [triggers.sql]: CREATE OR REPLACE FUNCTION update_tour_rating() RETURN TRIGGER LANGUAGE plpgsql AS '
+BEGIN
+    UPDATE tours
+    SET rating = (
+        SELECT COALESCE(AVG(mark),0)
+        FROM tour_reviews
+        WHERE tour_id = COALESCE(NEW.tour_id, OLD.tour_id)
+       )
+    WHERE id = COALESCE(NEW.tour_id, OLD.tour_id);
+
+    RETURN NULL;
+END;' CREATE TRIGGER trg_update_tour_rating AFTER INSERT OR UPDATE OR DELETE ON tour_reviews FOR EACH ROW EXECUTE FUNCTION update_tour_rating()
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:767)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:748)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:493)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1446)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:229)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1762)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1651)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:764)
+	... 54 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userRepositoryImpl' defined in file [/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main/by/sysoev/tourApp/repository/impl/UserRepositoryImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'jdbcTemplate' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/JdbcTemplateConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of JdbcTemplate bean 'jdbcTemplate': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute SQL script statement #9 of class path resource [triggers.sql]: CREATE OR REPLACE FUNCTION update_tour_rating() RETURN TRIGGER LANGUAGE plpgsql AS '
+BEGIN
+    UPDATE tours
+    SET rating = (
+        SELECT COALESCE(AVG(mark),0)
+        FROM tour_reviews
+        WHERE tour_id = COALESCE(NEW.tour_id, OLD.tour_id)
+       )
+    WHERE id = COALESCE(NEW.tour_id, OLD.tour_id);
+
+    RETURN NULL;
+END;' CREATE TRIGGER trg_update_tour_rating AFTER INSERT OR UPDATE OR DELETE ON tour_reviews FOR EACH ROW EXECUTE FUNCTION update_tour_rating()
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1382)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1221)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:229)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1762)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1651)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:764)
+	... 68 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jdbcTemplate' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/JdbcTemplateConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of JdbcTemplate bean 'jdbcTemplate': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute SQL script statement #9 of class path resource [triggers.sql]: CREATE OR REPLACE FUNCTION update_tour_rating() RETURN TRIGGER LANGUAGE plpgsql AS '
+BEGIN
+    UPDATE tours
+    SET rating = (
+        SELECT COALESCE(AVG(mark),0)
+        FROM tour_reviews
+        WHERE tour_id = COALESCE(NEW.tour_id, OLD.tour_id)
+       )
+    WHERE id = COALESCE(NEW.tour_id, OLD.tour_id);
+
+    RETURN NULL;
+END;' CREATE TRIGGER trg_update_tour_rating AFTER INSERT OR UPDATE OR DELETE ON tour_reviews FOR EACH ROW EXECUTE FUNCTION update_tour_rating()
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveBean(DefaultListableBeanFactory.java:1225)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1704)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1651)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:912)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 81 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute SQL script statement #9 of class path resource [triggers.sql]: CREATE OR REPLACE FUNCTION update_tour_rating() RETURN TRIGGER LANGUAGE plpgsql AS '
+BEGIN
+    UPDATE tours
+    SET rating = (
+        SELECT COALESCE(AVG(mark),0)
+        FROM tour_reviews
+        WHERE tour_id = COALESCE(NEW.tour_id, OLD.tour_id)
+       )
+    WHERE id = COALESCE(NEW.tour_id, OLD.tour_id);
+
+    RETURN NULL;
+END;' CREATE TRIGGER trg_update_tour_rating AFTER INSERT OR UPDATE OR DELETE ON tour_reviews FOR EACH ROW EXECUTE FUNCTION update_tour_rating()
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1817)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:309)
+	... 87 common frames omitted
+Caused by: org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #9 of class path resource [triggers.sql]: CREATE OR REPLACE FUNCTION update_tour_rating() RETURN TRIGGER LANGUAGE plpgsql AS '
+BEGIN
+    UPDATE tours
+    SET rating = (
+        SELECT COALESCE(AVG(mark),0)
+        FROM tour_reviews
+        WHERE tour_id = COALESCE(NEW.tour_id, OLD.tour_id)
+       )
+    WHERE id = COALESCE(NEW.tour_id, OLD.tour_id);
+
+    RETURN NULL;
+END;' CREATE TRIGGER trg_update_tour_rating AFTER INSERT OR UPDATE OR DELETE ON tour_reviews FOR EACH ROW EXECUTE FUNCTION update_tour_rating()
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:293)
+	at org.springframework.jdbc.datasource.init.ResourceDatabasePopulator.populate(ResourceDatabasePopulator.java:254)
+	at org.springframework.jdbc.datasource.init.DatabasePopulatorUtils.execute(DatabasePopulatorUtils.java:54)
+	at org.springframework.boot.jdbc.init.DataSourceScriptDatabaseInitializer.runScripts(DataSourceScriptDatabaseInitializer.java:87)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.runScripts(AbstractScriptDatabaseInitializer.java:159)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.applyScripts(AbstractScriptDatabaseInitializer.java:120)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.applySchemaScripts(AbstractScriptDatabaseInitializer.java:109)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.initializeDatabase(AbstractScriptDatabaseInitializer.java:87)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.afterPropertiesSet(AbstractScriptDatabaseInitializer.java:77)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1864)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1813)
+	... 94 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ERROR: syntax error at or near "RETURN"
+  Position: 49
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2875)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2560)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:429)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:526)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:436)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:358)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:343)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:319)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:314)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:261)
+	... 104 common frames omitted
+2026-03-11 21:38:31 [main] INFO  b.sysoev.tourApp.TourAppApplication - Starting TourAppApplication using Java 17.0.14 with PID 57368 (/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main started by whitesmurf in /Users/whitesmurf/Desktop/projects/tourApp)
+2026-03-11 21:38:31 [main] INFO  b.sysoev.tourApp.TourAppApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-11 21:38:32 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-11 21:38:32 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-11 21:38:32 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-11 21:38:32 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-11 21:38:32 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@35cec305
+2026-03-11 21:38:32 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-11 21:38:32 [main] ERROR o.s.b.t.s.DeferredServletContainerInitializers - Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'jwtFilter': Unsatisfied dependency expressed through field 'userDetailsService': Error creating bean with name 'myUserDetailsService': Unsatisfied dependency expressed through field 'userRepository': Error creating bean with name 'userRepositoryImpl' defined in file [/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main/by/sysoev/tourApp/repository/impl/UserRepositoryImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'jdbcTemplate' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/JdbcTemplateConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of JdbcTemplate bean 'jdbcTemplate': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute SQL script statement #9 of class path resource [triggers.sql]: CREATE OR REPLACE FUNCTION update_tour_rating() RETURN TRIGGER LANGUAGE plpgsql AS '
+BEGIN
+    UPDATE tours
+    SET rating = (
+        SELECT COALESCE(AVG(mark),0)
+        FROM tour_reviews
+        WHERE tour_id = COALESCE(NEW.tour_id, OLD.tour_id)
+       )
+    WHERE id = COALESCE(NEW.tour_id, OLD.tour_id);
+
+    RETURN NULL;
+END;' CREATE TRIGGER trg_update_tour_rating AFTER INSERT OR UPDATE OR DELETE ON tour_reviews FOR EACH ROW EXECUTE FUNCTION update_tour_rating()
+2026-03-11 21:38:32 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-03-11 21:38:32 [main] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [HikariPool-1:housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.14/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.14/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.14/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1679)
+ java.base@17.0.14/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.14/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.14/java.lang.Thread.run(Thread.java:840)
+2026-03-11 21:38:32 [main] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [HikariPool-1:connection-adder] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.14/java.lang.Thread.sleep(Native Method)
+ app//com.zaxxer.hikari.util.UtilityElf.quietlySleep(UtilityElf.java:80)
+ app//com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:757)
+ app//com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731)
+ java.base@17.0.14/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+ java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.14/java.lang.Thread.run(Thread.java:840)
+2026-03-11 21:38:32 [main] WARN  o.s.b.w.s.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2026-03-11 21:38:32 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-11 21:38:32 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-11 21:38:32 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:167)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:615)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at by.sysoev.tourApp.TourAppApplication.main(TourAppApplication.java:14)
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:150)
+	at org.springframework.boot.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:110)
+	at org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:408)
+	at org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:166)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:190)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:164)
+	... 8 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jwtFilter': Unsatisfied dependency expressed through field 'userDetailsService': Error creating bean with name 'myUserDetailsService': Unsatisfied dependency expressed through field 'userRepository': Error creating bean with name 'userRepositoryImpl' defined in file [/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main/by/sysoev/tourApp/repository/impl/UserRepositoryImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'jdbcTemplate' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/JdbcTemplateConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of JdbcTemplate bean 'jdbcTemplate': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute SQL script statement #9 of class path resource [triggers.sql]: CREATE OR REPLACE FUNCTION update_tour_rating() RETURN TRIGGER LANGUAGE plpgsql AS '
+BEGIN
+    UPDATE tours
+    SET rating = (
+        SELECT COALESCE(AVG(mark),0)
+        FROM tour_reviews
+        WHERE tour_id = COALESCE(NEW.tour_id, OLD.tour_id)
+       )
+    WHERE id = COALESCE(NEW.tour_id, OLD.tour_id);
+
+    RETURN NULL;
+END;' CREATE TRIGGER trg_update_tour_rating AFTER INSERT OR UPDATE OR DELETE ON tour_reviews FOR EACH ROW EXECUTE FUNCTION update_tour_rating()
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:767)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:748)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:493)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1446)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:231)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:185)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:180)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:165)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:97)
+	at org.springframework.boot.web.context.servlet.WebApplicationContextInitializer.initialize(WebApplicationContextInitializer.java:53)
+	at org.springframework.boot.tomcat.servlet.DeferredServletContainerInitializers.onStartup(DeferredServletContainerInitializers.java:55)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4416)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1162)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1158)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:81)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:714)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:780)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1162)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1158)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:81)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:714)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:201)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:410)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:864)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:435)
+	at org.springframework.boot.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:131)
+	... 13 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'myUserDetailsService': Unsatisfied dependency expressed through field 'userRepository': Error creating bean with name 'userRepositoryImpl' defined in file [/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main/by/sysoev/tourApp/repository/impl/UserRepositoryImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'jdbcTemplate' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/JdbcTemplateConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of JdbcTemplate bean 'jdbcTemplate': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute SQL script statement #9 of class path resource [triggers.sql]: CREATE OR REPLACE FUNCTION update_tour_rating() RETURN TRIGGER LANGUAGE plpgsql AS '
+BEGIN
+    UPDATE tours
+    SET rating = (
+        SELECT COALESCE(AVG(mark),0)
+        FROM tour_reviews
+        WHERE tour_id = COALESCE(NEW.tour_id, OLD.tour_id)
+       )
+    WHERE id = COALESCE(NEW.tour_id, OLD.tour_id);
+
+    RETURN NULL;
+END;' CREATE TRIGGER trg_update_tour_rating AFTER INSERT OR UPDATE OR DELETE ON tour_reviews FOR EACH ROW EXECUTE FUNCTION update_tour_rating()
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:767)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:748)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:493)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1446)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:229)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1762)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1651)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:764)
+	... 54 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userRepositoryImpl' defined in file [/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main/by/sysoev/tourApp/repository/impl/UserRepositoryImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'jdbcTemplate' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/JdbcTemplateConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of JdbcTemplate bean 'jdbcTemplate': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute SQL script statement #9 of class path resource [triggers.sql]: CREATE OR REPLACE FUNCTION update_tour_rating() RETURN TRIGGER LANGUAGE plpgsql AS '
+BEGIN
+    UPDATE tours
+    SET rating = (
+        SELECT COALESCE(AVG(mark),0)
+        FROM tour_reviews
+        WHERE tour_id = COALESCE(NEW.tour_id, OLD.tour_id)
+       )
+    WHERE id = COALESCE(NEW.tour_id, OLD.tour_id);
+
+    RETURN NULL;
+END;' CREATE TRIGGER trg_update_tour_rating AFTER INSERT OR UPDATE OR DELETE ON tour_reviews FOR EACH ROW EXECUTE FUNCTION update_tour_rating()
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1382)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1221)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:229)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1762)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1651)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:764)
+	... 68 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jdbcTemplate' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/JdbcTemplateConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of JdbcTemplate bean 'jdbcTemplate': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute SQL script statement #9 of class path resource [triggers.sql]: CREATE OR REPLACE FUNCTION update_tour_rating() RETURN TRIGGER LANGUAGE plpgsql AS '
+BEGIN
+    UPDATE tours
+    SET rating = (
+        SELECT COALESCE(AVG(mark),0)
+        FROM tour_reviews
+        WHERE tour_id = COALESCE(NEW.tour_id, OLD.tour_id)
+       )
+    WHERE id = COALESCE(NEW.tour_id, OLD.tour_id);
+
+    RETURN NULL;
+END;' CREATE TRIGGER trg_update_tour_rating AFTER INSERT OR UPDATE OR DELETE ON tour_reviews FOR EACH ROW EXECUTE FUNCTION update_tour_rating()
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveBean(DefaultListableBeanFactory.java:1225)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1704)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1651)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:912)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 81 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute SQL script statement #9 of class path resource [triggers.sql]: CREATE OR REPLACE FUNCTION update_tour_rating() RETURN TRIGGER LANGUAGE plpgsql AS '
+BEGIN
+    UPDATE tours
+    SET rating = (
+        SELECT COALESCE(AVG(mark),0)
+        FROM tour_reviews
+        WHERE tour_id = COALESCE(NEW.tour_id, OLD.tour_id)
+       )
+    WHERE id = COALESCE(NEW.tour_id, OLD.tour_id);
+
+    RETURN NULL;
+END;' CREATE TRIGGER trg_update_tour_rating AFTER INSERT OR UPDATE OR DELETE ON tour_reviews FOR EACH ROW EXECUTE FUNCTION update_tour_rating()
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1817)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:309)
+	... 87 common frames omitted
+Caused by: org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #9 of class path resource [triggers.sql]: CREATE OR REPLACE FUNCTION update_tour_rating() RETURN TRIGGER LANGUAGE plpgsql AS '
+BEGIN
+    UPDATE tours
+    SET rating = (
+        SELECT COALESCE(AVG(mark),0)
+        FROM tour_reviews
+        WHERE tour_id = COALESCE(NEW.tour_id, OLD.tour_id)
+       )
+    WHERE id = COALESCE(NEW.tour_id, OLD.tour_id);
+
+    RETURN NULL;
+END;' CREATE TRIGGER trg_update_tour_rating AFTER INSERT OR UPDATE OR DELETE ON tour_reviews FOR EACH ROW EXECUTE FUNCTION update_tour_rating()
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:293)
+	at org.springframework.jdbc.datasource.init.ResourceDatabasePopulator.populate(ResourceDatabasePopulator.java:254)
+	at org.springframework.jdbc.datasource.init.DatabasePopulatorUtils.execute(DatabasePopulatorUtils.java:54)
+	at org.springframework.boot.jdbc.init.DataSourceScriptDatabaseInitializer.runScripts(DataSourceScriptDatabaseInitializer.java:87)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.runScripts(AbstractScriptDatabaseInitializer.java:159)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.applyScripts(AbstractScriptDatabaseInitializer.java:120)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.applySchemaScripts(AbstractScriptDatabaseInitializer.java:109)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.initializeDatabase(AbstractScriptDatabaseInitializer.java:87)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.afterPropertiesSet(AbstractScriptDatabaseInitializer.java:77)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1864)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1813)
+	... 94 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ERROR: syntax error at or near "RETURN"
+  Position: 49
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2875)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2560)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:429)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:526)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:436)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:358)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:343)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:319)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:314)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:261)
+	... 104 common frames omitted
+2026-03-11 21:38:43 [main] INFO  b.sysoev.tourApp.TourAppApplication - Starting TourAppApplication using Java 17.0.14 with PID 57374 (/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main started by whitesmurf in /Users/whitesmurf/Desktop/projects/tourApp)
+2026-03-11 21:38:43 [main] INFO  b.sysoev.tourApp.TourAppApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-11 21:38:44 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-11 21:38:44 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-11 21:38:44 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-11 21:38:44 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-11 21:38:44 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@35cec305
+2026-03-11 21:38:44 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-11 21:38:44 [main] ERROR o.s.b.t.s.DeferredServletContainerInitializers - Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'jwtFilter': Unsatisfied dependency expressed through field 'userDetailsService': Error creating bean with name 'myUserDetailsService': Unsatisfied dependency expressed through field 'userRepository': Error creating bean with name 'userRepositoryImpl' defined in file [/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main/by/sysoev/tourApp/repository/impl/UserRepositoryImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'jdbcTemplate' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/JdbcTemplateConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of JdbcTemplate bean 'jdbcTemplate': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute SQL script statement #9 of class path resource [triggers.sql]: CREATE OR REPLACE FUNCTION update_tour_rating() RETURN TRIGGER LANGUAGE plpgsql AS '
+BEGIN
+    UPDATE tours
+    SET rating = (
+        SELECT COALESCE(AVG(mark),0)
+        FROM tour_reviews
+        WHERE tour_id = COALESCE(NEW.tour_id, OLD.tour_id)
+       )
+    WHERE id = COALESCE(NEW.tour_id, OLD.tour_id);
+
+    RETURN NULL;
+END;' CREATE TRIGGER trg_update_tour_rating AFTER INSERT OR UPDATE OR DELETE ON tour_reviews FOR EACH ROW EXECUTE FUNCTION update_tour_rating()
+2026-03-11 21:38:44 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-03-11 21:38:44 [main] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [HikariPool-1:housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.14/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.14/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.14/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1679)
+ java.base@17.0.14/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.14/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.14/java.lang.Thread.run(Thread.java:840)
+2026-03-11 21:38:44 [main] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [HikariPool-1:connection-adder] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.14/java.lang.Thread.sleep(Native Method)
+ app//com.zaxxer.hikari.util.UtilityElf.quietlySleep(UtilityElf.java:80)
+ app//com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:757)
+ app//com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731)
+ java.base@17.0.14/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+ java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.14/java.lang.Thread.run(Thread.java:840)
+2026-03-11 21:38:44 [main] WARN  o.s.b.w.s.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2026-03-11 21:38:44 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-11 21:38:44 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-11 21:38:44 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:167)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:615)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at by.sysoev.tourApp.TourAppApplication.main(TourAppApplication.java:14)
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:150)
+	at org.springframework.boot.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:110)
+	at org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:408)
+	at org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:166)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:190)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:164)
+	... 8 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jwtFilter': Unsatisfied dependency expressed through field 'userDetailsService': Error creating bean with name 'myUserDetailsService': Unsatisfied dependency expressed through field 'userRepository': Error creating bean with name 'userRepositoryImpl' defined in file [/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main/by/sysoev/tourApp/repository/impl/UserRepositoryImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'jdbcTemplate' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/JdbcTemplateConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of JdbcTemplate bean 'jdbcTemplate': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute SQL script statement #9 of class path resource [triggers.sql]: CREATE OR REPLACE FUNCTION update_tour_rating() RETURN TRIGGER LANGUAGE plpgsql AS '
+BEGIN
+    UPDATE tours
+    SET rating = (
+        SELECT COALESCE(AVG(mark),0)
+        FROM tour_reviews
+        WHERE tour_id = COALESCE(NEW.tour_id, OLD.tour_id)
+       )
+    WHERE id = COALESCE(NEW.tour_id, OLD.tour_id);
+
+    RETURN NULL;
+END;' CREATE TRIGGER trg_update_tour_rating AFTER INSERT OR UPDATE OR DELETE ON tour_reviews FOR EACH ROW EXECUTE FUNCTION update_tour_rating()
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:767)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:748)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:493)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1446)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:231)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:185)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:180)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:165)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:97)
+	at org.springframework.boot.web.context.servlet.WebApplicationContextInitializer.initialize(WebApplicationContextInitializer.java:53)
+	at org.springframework.boot.tomcat.servlet.DeferredServletContainerInitializers.onStartup(DeferredServletContainerInitializers.java:55)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4416)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1162)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1158)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:81)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:714)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:780)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1162)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1158)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:81)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:714)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:201)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:410)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:864)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:435)
+	at org.springframework.boot.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:131)
+	... 13 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'myUserDetailsService': Unsatisfied dependency expressed through field 'userRepository': Error creating bean with name 'userRepositoryImpl' defined in file [/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main/by/sysoev/tourApp/repository/impl/UserRepositoryImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'jdbcTemplate' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/JdbcTemplateConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of JdbcTemplate bean 'jdbcTemplate': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute SQL script statement #9 of class path resource [triggers.sql]: CREATE OR REPLACE FUNCTION update_tour_rating() RETURN TRIGGER LANGUAGE plpgsql AS '
+BEGIN
+    UPDATE tours
+    SET rating = (
+        SELECT COALESCE(AVG(mark),0)
+        FROM tour_reviews
+        WHERE tour_id = COALESCE(NEW.tour_id, OLD.tour_id)
+       )
+    WHERE id = COALESCE(NEW.tour_id, OLD.tour_id);
+
+    RETURN NULL;
+END;' CREATE TRIGGER trg_update_tour_rating AFTER INSERT OR UPDATE OR DELETE ON tour_reviews FOR EACH ROW EXECUTE FUNCTION update_tour_rating()
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:767)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:748)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:493)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1446)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:229)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1762)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1651)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:764)
+	... 54 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userRepositoryImpl' defined in file [/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main/by/sysoev/tourApp/repository/impl/UserRepositoryImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'jdbcTemplate' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/JdbcTemplateConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of JdbcTemplate bean 'jdbcTemplate': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute SQL script statement #9 of class path resource [triggers.sql]: CREATE OR REPLACE FUNCTION update_tour_rating() RETURN TRIGGER LANGUAGE plpgsql AS '
+BEGIN
+    UPDATE tours
+    SET rating = (
+        SELECT COALESCE(AVG(mark),0)
+        FROM tour_reviews
+        WHERE tour_id = COALESCE(NEW.tour_id, OLD.tour_id)
+       )
+    WHERE id = COALESCE(NEW.tour_id, OLD.tour_id);
+
+    RETURN NULL;
+END;' CREATE TRIGGER trg_update_tour_rating AFTER INSERT OR UPDATE OR DELETE ON tour_reviews FOR EACH ROW EXECUTE FUNCTION update_tour_rating()
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1382)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1221)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:229)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1762)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1651)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:764)
+	... 68 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jdbcTemplate' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/JdbcTemplateConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of JdbcTemplate bean 'jdbcTemplate': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute SQL script statement #9 of class path resource [triggers.sql]: CREATE OR REPLACE FUNCTION update_tour_rating() RETURN TRIGGER LANGUAGE plpgsql AS '
+BEGIN
+    UPDATE tours
+    SET rating = (
+        SELECT COALESCE(AVG(mark),0)
+        FROM tour_reviews
+        WHERE tour_id = COALESCE(NEW.tour_id, OLD.tour_id)
+       )
+    WHERE id = COALESCE(NEW.tour_id, OLD.tour_id);
+
+    RETURN NULL;
+END;' CREATE TRIGGER trg_update_tour_rating AFTER INSERT OR UPDATE OR DELETE ON tour_reviews FOR EACH ROW EXECUTE FUNCTION update_tour_rating()
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveBean(DefaultListableBeanFactory.java:1225)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1704)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1651)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:912)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 81 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute SQL script statement #9 of class path resource [triggers.sql]: CREATE OR REPLACE FUNCTION update_tour_rating() RETURN TRIGGER LANGUAGE plpgsql AS '
+BEGIN
+    UPDATE tours
+    SET rating = (
+        SELECT COALESCE(AVG(mark),0)
+        FROM tour_reviews
+        WHERE tour_id = COALESCE(NEW.tour_id, OLD.tour_id)
+       )
+    WHERE id = COALESCE(NEW.tour_id, OLD.tour_id);
+
+    RETURN NULL;
+END;' CREATE TRIGGER trg_update_tour_rating AFTER INSERT OR UPDATE OR DELETE ON tour_reviews FOR EACH ROW EXECUTE FUNCTION update_tour_rating()
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1817)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:309)
+	... 87 common frames omitted
+Caused by: org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #9 of class path resource [triggers.sql]: CREATE OR REPLACE FUNCTION update_tour_rating() RETURN TRIGGER LANGUAGE plpgsql AS '
+BEGIN
+    UPDATE tours
+    SET rating = (
+        SELECT COALESCE(AVG(mark),0)
+        FROM tour_reviews
+        WHERE tour_id = COALESCE(NEW.tour_id, OLD.tour_id)
+       )
+    WHERE id = COALESCE(NEW.tour_id, OLD.tour_id);
+
+    RETURN NULL;
+END;' CREATE TRIGGER trg_update_tour_rating AFTER INSERT OR UPDATE OR DELETE ON tour_reviews FOR EACH ROW EXECUTE FUNCTION update_tour_rating()
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:293)
+	at org.springframework.jdbc.datasource.init.ResourceDatabasePopulator.populate(ResourceDatabasePopulator.java:254)
+	at org.springframework.jdbc.datasource.init.DatabasePopulatorUtils.execute(DatabasePopulatorUtils.java:54)
+	at org.springframework.boot.jdbc.init.DataSourceScriptDatabaseInitializer.runScripts(DataSourceScriptDatabaseInitializer.java:87)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.runScripts(AbstractScriptDatabaseInitializer.java:159)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.applyScripts(AbstractScriptDatabaseInitializer.java:120)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.applySchemaScripts(AbstractScriptDatabaseInitializer.java:109)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.initializeDatabase(AbstractScriptDatabaseInitializer.java:87)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.afterPropertiesSet(AbstractScriptDatabaseInitializer.java:77)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1864)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1813)
+	... 94 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ERROR: syntax error at or near "RETURN"
+  Position: 49
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2875)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2560)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:429)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:526)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:436)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:358)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:343)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:319)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:314)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:261)
+	... 104 common frames omitted
+2026-03-11 21:45:21 [main] INFO  b.sysoev.tourApp.TourAppApplication - Starting TourAppApplication using Java 17.0.14 with PID 57493 (/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main started by whitesmurf in /Users/whitesmurf/Desktop/projects/tourApp)
+2026-03-11 21:45:21 [main] INFO  b.sysoev.tourApp.TourAppApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-11 21:45:22 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-11 21:45:22 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-11 21:45:22 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-11 21:45:22 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-11 21:45:22 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@35cec305
+2026-03-11 21:45:22 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-11 21:45:22 [main] ERROR o.s.b.t.s.DeferredServletContainerInitializers - Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'jwtFilter': Unsatisfied dependency expressed through field 'userDetailsService': Error creating bean with name 'myUserDetailsService': Unsatisfied dependency expressed through field 'userRepository': Error creating bean with name 'userRepositoryImpl' defined in file [/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main/by/sysoev/tourApp/repository/impl/UserRepositoryImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'jdbcTemplate' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/JdbcTemplateConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of JdbcTemplate bean 'jdbcTemplate': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute SQL script statement #1 of class path resource [functions.sql]: CREATE OR REPLACE FUNCTION calculate_total_booking(p_booking_id BIGINT) RETURN NUMERIC LANGUAGE plpgsql AS '
+    DECLARE
+       passengers_count INT;
+       price_per_person NUMERIC(10,2);
+    BEGIN
+        SELECT COUNT(*)
+        INTO passengers_count
+        FROM booking_passengers
+        WHERE booking_id = p_booking_id;
+
+        SELECT ts.price
+        INTO price_per_person
+        FROM bookings b
+        JOIN tour_schedule ts ON ts.id = b.tour_schedule_id
+        WHERE b.id = p_booking_id;
+
+        RETURN  passengers_count * price_per_person;
+    END;'
+2026-03-11 21:45:22 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-03-11 21:45:22 [main] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [HikariPool-1:housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.14/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.14/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.14/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1679)
+ java.base@17.0.14/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.14/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.14/java.lang.Thread.run(Thread.java:840)
+2026-03-11 21:45:22 [main] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [HikariPool-1:connection-adder] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.14/java.lang.Thread.sleep(Native Method)
+ app//com.zaxxer.hikari.util.UtilityElf.quietlySleep(UtilityElf.java:80)
+ app//com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:757)
+ app//com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731)
+ java.base@17.0.14/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+ java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.14/java.lang.Thread.run(Thread.java:840)
+2026-03-11 21:45:22 [main] WARN  o.s.b.w.s.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2026-03-11 21:45:22 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-11 21:45:22 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-11 21:45:22 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:167)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:615)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at by.sysoev.tourApp.TourAppApplication.main(TourAppApplication.java:14)
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:150)
+	at org.springframework.boot.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:110)
+	at org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:408)
+	at org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:166)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:190)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:164)
+	... 8 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jwtFilter': Unsatisfied dependency expressed through field 'userDetailsService': Error creating bean with name 'myUserDetailsService': Unsatisfied dependency expressed through field 'userRepository': Error creating bean with name 'userRepositoryImpl' defined in file [/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main/by/sysoev/tourApp/repository/impl/UserRepositoryImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'jdbcTemplate' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/JdbcTemplateConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of JdbcTemplate bean 'jdbcTemplate': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute SQL script statement #1 of class path resource [functions.sql]: CREATE OR REPLACE FUNCTION calculate_total_booking(p_booking_id BIGINT) RETURN NUMERIC LANGUAGE plpgsql AS '
+    DECLARE
+       passengers_count INT;
+       price_per_person NUMERIC(10,2);
+    BEGIN
+        SELECT COUNT(*)
+        INTO passengers_count
+        FROM booking_passengers
+        WHERE booking_id = p_booking_id;
+
+        SELECT ts.price
+        INTO price_per_person
+        FROM bookings b
+        JOIN tour_schedule ts ON ts.id = b.tour_schedule_id
+        WHERE b.id = p_booking_id;
+
+        RETURN  passengers_count * price_per_person;
+    END;'
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:767)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:748)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:493)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1446)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:231)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:185)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:180)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:165)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:97)
+	at org.springframework.boot.web.context.servlet.WebApplicationContextInitializer.initialize(WebApplicationContextInitializer.java:53)
+	at org.springframework.boot.tomcat.servlet.DeferredServletContainerInitializers.onStartup(DeferredServletContainerInitializers.java:55)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4416)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1162)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1158)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:81)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:714)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:780)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1162)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1158)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:81)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:714)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:201)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:410)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:864)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:435)
+	at org.springframework.boot.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:131)
+	... 13 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'myUserDetailsService': Unsatisfied dependency expressed through field 'userRepository': Error creating bean with name 'userRepositoryImpl' defined in file [/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main/by/sysoev/tourApp/repository/impl/UserRepositoryImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'jdbcTemplate' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/JdbcTemplateConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of JdbcTemplate bean 'jdbcTemplate': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute SQL script statement #1 of class path resource [functions.sql]: CREATE OR REPLACE FUNCTION calculate_total_booking(p_booking_id BIGINT) RETURN NUMERIC LANGUAGE plpgsql AS '
+    DECLARE
+       passengers_count INT;
+       price_per_person NUMERIC(10,2);
+    BEGIN
+        SELECT COUNT(*)
+        INTO passengers_count
+        FROM booking_passengers
+        WHERE booking_id = p_booking_id;
+
+        SELECT ts.price
+        INTO price_per_person
+        FROM bookings b
+        JOIN tour_schedule ts ON ts.id = b.tour_schedule_id
+        WHERE b.id = p_booking_id;
+
+        RETURN  passengers_count * price_per_person;
+    END;'
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:767)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:748)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:493)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1446)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:229)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1762)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1651)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:764)
+	... 54 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userRepositoryImpl' defined in file [/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main/by/sysoev/tourApp/repository/impl/UserRepositoryImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'jdbcTemplate' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/JdbcTemplateConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of JdbcTemplate bean 'jdbcTemplate': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute SQL script statement #1 of class path resource [functions.sql]: CREATE OR REPLACE FUNCTION calculate_total_booking(p_booking_id BIGINT) RETURN NUMERIC LANGUAGE plpgsql AS '
+    DECLARE
+       passengers_count INT;
+       price_per_person NUMERIC(10,2);
+    BEGIN
+        SELECT COUNT(*)
+        INTO passengers_count
+        FROM booking_passengers
+        WHERE booking_id = p_booking_id;
+
+        SELECT ts.price
+        INTO price_per_person
+        FROM bookings b
+        JOIN tour_schedule ts ON ts.id = b.tour_schedule_id
+        WHERE b.id = p_booking_id;
+
+        RETURN  passengers_count * price_per_person;
+    END;'
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1382)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1221)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:229)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1762)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1651)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:764)
+	... 68 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jdbcTemplate' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/JdbcTemplateConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of JdbcTemplate bean 'jdbcTemplate': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute SQL script statement #1 of class path resource [functions.sql]: CREATE OR REPLACE FUNCTION calculate_total_booking(p_booking_id BIGINT) RETURN NUMERIC LANGUAGE plpgsql AS '
+    DECLARE
+       passengers_count INT;
+       price_per_person NUMERIC(10,2);
+    BEGIN
+        SELECT COUNT(*)
+        INTO passengers_count
+        FROM booking_passengers
+        WHERE booking_id = p_booking_id;
+
+        SELECT ts.price
+        INTO price_per_person
+        FROM bookings b
+        JOIN tour_schedule ts ON ts.id = b.tour_schedule_id
+        WHERE b.id = p_booking_id;
+
+        RETURN  passengers_count * price_per_person;
+    END;'
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveBean(DefaultListableBeanFactory.java:1225)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1704)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1651)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:912)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 81 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute SQL script statement #1 of class path resource [functions.sql]: CREATE OR REPLACE FUNCTION calculate_total_booking(p_booking_id BIGINT) RETURN NUMERIC LANGUAGE plpgsql AS '
+    DECLARE
+       passengers_count INT;
+       price_per_person NUMERIC(10,2);
+    BEGIN
+        SELECT COUNT(*)
+        INTO passengers_count
+        FROM booking_passengers
+        WHERE booking_id = p_booking_id;
+
+        SELECT ts.price
+        INTO price_per_person
+        FROM bookings b
+        JOIN tour_schedule ts ON ts.id = b.tour_schedule_id
+        WHERE b.id = p_booking_id;
+
+        RETURN  passengers_count * price_per_person;
+    END;'
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1817)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:309)
+	... 87 common frames omitted
+Caused by: org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of class path resource [functions.sql]: CREATE OR REPLACE FUNCTION calculate_total_booking(p_booking_id BIGINT) RETURN NUMERIC LANGUAGE plpgsql AS '
+    DECLARE
+       passengers_count INT;
+       price_per_person NUMERIC(10,2);
+    BEGIN
+        SELECT COUNT(*)
+        INTO passengers_count
+        FROM booking_passengers
+        WHERE booking_id = p_booking_id;
+
+        SELECT ts.price
+        INTO price_per_person
+        FROM bookings b
+        JOIN tour_schedule ts ON ts.id = b.tour_schedule_id
+        WHERE b.id = p_booking_id;
+
+        RETURN  passengers_count * price_per_person;
+    END;'
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:293)
+	at org.springframework.jdbc.datasource.init.ResourceDatabasePopulator.populate(ResourceDatabasePopulator.java:254)
+	at org.springframework.jdbc.datasource.init.DatabasePopulatorUtils.execute(DatabasePopulatorUtils.java:54)
+	at org.springframework.boot.jdbc.init.DataSourceScriptDatabaseInitializer.runScripts(DataSourceScriptDatabaseInitializer.java:87)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.runScripts(AbstractScriptDatabaseInitializer.java:159)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.applyScripts(AbstractScriptDatabaseInitializer.java:120)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.applySchemaScripts(AbstractScriptDatabaseInitializer.java:109)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.initializeDatabase(AbstractScriptDatabaseInitializer.java:87)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.afterPropertiesSet(AbstractScriptDatabaseInitializer.java:77)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1864)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1813)
+	... 94 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ERROR: syntax error at or near "RETURN"
+  Position: 73
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2875)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2560)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:429)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:526)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:436)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:358)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:343)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:319)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:314)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:261)
+	... 104 common frames omitted
+2026-03-11 21:45:50 [main] INFO  b.sysoev.tourApp.TourAppApplication - Starting TourAppApplication using Java 17.0.14 with PID 57504 (/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main started by whitesmurf in /Users/whitesmurf/Desktop/projects/tourApp)
+2026-03-11 21:45:50 [main] INFO  b.sysoev.tourApp.TourAppApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-11 21:45:51 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-11 21:45:51 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-11 21:45:51 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-11 21:45:51 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-11 21:45:51 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@35cec305
+2026-03-11 21:45:51 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-11 21:45:51 [main] ERROR o.s.b.t.s.DeferredServletContainerInitializers - Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'jwtFilter': Unsatisfied dependency expressed through field 'userDetailsService': Error creating bean with name 'myUserDetailsService': Unsatisfied dependency expressed through field 'userRepository': Error creating bean with name 'userRepositoryImpl' defined in file [/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main/by/sysoev/tourApp/repository/impl/UserRepositoryImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'jdbcTemplate' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/JdbcTemplateConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of JdbcTemplate bean 'jdbcTemplate': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute SQL script statement #1 of class path resource [procedures.sql]: CREATE OR REPLACE PROCEDURE create_booking( p_user_id BIGINT, p_tour_schedule_id BIGINT, p_pricae_at_booking NUMERIC(10,2) ) LANGUAGE plpgsql AS '
+BEGIN
+INSERT INTO bookings(
+    tour_schedule_id,
+    user_id,
+    booking_status_id,
+    price_at_booking
+)
+VALUES(
+          p_tour_schedule_id,
+          p_user_id,
+          1,
+      );
+END;'
+2026-03-11 21:45:51 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-03-11 21:45:51 [main] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [HikariPool-1:housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.14/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.14/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.14/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1679)
+ java.base@17.0.14/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.14/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.14/java.lang.Thread.run(Thread.java:840)
+2026-03-11 21:45:51 [main] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [HikariPool-1:connection-adder] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.14/sun.nio.ch.Net.poll(Native Method)
+ java.base@17.0.14/sun.nio.ch.NioSocketImpl.park(NioSocketImpl.java:186)
+ java.base@17.0.14/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:290)
+ java.base@17.0.14/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:314)
+ java.base@17.0.14/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:355)
+ java.base@17.0.14/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:808)
+ java.base@17.0.14/java.net.Socket$SocketInputStream.read(Socket.java:966)
+ app//org.postgresql.core.VisibleBufferedInputStream.readMore(VisibleBufferedInputStream.java:192)
+ app//org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:159)
+ app//org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:144)
+ app//org.postgresql.core.VisibleBufferedInputStream.read(VisibleBufferedInputStream.java:76)
+ app//org.postgresql.core.PGStream.receiveChar(PGStream.java:477)
+ app//org.postgresql.core.v3.ConnectionFactoryImpl.enableSSL(ConnectionFactoryImpl.java:627)
+ app//org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:207)
+ app//org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:289)
+ app//org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:57)
+ app//org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:290)
+ app//org.postgresql.Driver.makeConnection(Driver.java:448)
+ app//org.postgresql.Driver.connect(Driver.java:298)
+ app//com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144)
+ app//com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373)
+ app//com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210)
+ app//com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488)
+ app//com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752)
+ app//com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731)
+ java.base@17.0.14/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+ java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.14/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.14/java.lang.Thread.run(Thread.java:840)
+2026-03-11 21:45:51 [main] WARN  o.s.b.w.s.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2026-03-11 21:45:51 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-11 21:45:51 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-11 21:45:51 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:167)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:615)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at by.sysoev.tourApp.TourAppApplication.main(TourAppApplication.java:14)
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:150)
+	at org.springframework.boot.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:110)
+	at org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:408)
+	at org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:166)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:190)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:164)
+	... 8 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jwtFilter': Unsatisfied dependency expressed through field 'userDetailsService': Error creating bean with name 'myUserDetailsService': Unsatisfied dependency expressed through field 'userRepository': Error creating bean with name 'userRepositoryImpl' defined in file [/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main/by/sysoev/tourApp/repository/impl/UserRepositoryImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'jdbcTemplate' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/JdbcTemplateConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of JdbcTemplate bean 'jdbcTemplate': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute SQL script statement #1 of class path resource [procedures.sql]: CREATE OR REPLACE PROCEDURE create_booking( p_user_id BIGINT, p_tour_schedule_id BIGINT, p_pricae_at_booking NUMERIC(10,2) ) LANGUAGE plpgsql AS '
+BEGIN
+INSERT INTO bookings(
+    tour_schedule_id,
+    user_id,
+    booking_status_id,
+    price_at_booking
+)
+VALUES(
+          p_tour_schedule_id,
+          p_user_id,
+          1,
+      );
+END;'
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:767)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:748)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:493)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1446)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:231)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:185)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:180)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:165)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:97)
+	at org.springframework.boot.web.context.servlet.WebApplicationContextInitializer.initialize(WebApplicationContextInitializer.java:53)
+	at org.springframework.boot.tomcat.servlet.DeferredServletContainerInitializers.onStartup(DeferredServletContainerInitializers.java:55)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4416)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1162)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1158)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:81)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:714)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:780)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1162)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1158)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:81)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:714)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:201)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:410)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:864)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:435)
+	at org.springframework.boot.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:131)
+	... 13 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'myUserDetailsService': Unsatisfied dependency expressed through field 'userRepository': Error creating bean with name 'userRepositoryImpl' defined in file [/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main/by/sysoev/tourApp/repository/impl/UserRepositoryImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'jdbcTemplate' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/JdbcTemplateConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of JdbcTemplate bean 'jdbcTemplate': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute SQL script statement #1 of class path resource [procedures.sql]: CREATE OR REPLACE PROCEDURE create_booking( p_user_id BIGINT, p_tour_schedule_id BIGINT, p_pricae_at_booking NUMERIC(10,2) ) LANGUAGE plpgsql AS '
+BEGIN
+INSERT INTO bookings(
+    tour_schedule_id,
+    user_id,
+    booking_status_id,
+    price_at_booking
+)
+VALUES(
+          p_tour_schedule_id,
+          p_user_id,
+          1,
+      );
+END;'
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:767)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:748)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:493)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1446)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:229)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1762)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1651)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:764)
+	... 54 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userRepositoryImpl' defined in file [/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main/by/sysoev/tourApp/repository/impl/UserRepositoryImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'jdbcTemplate' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/JdbcTemplateConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of JdbcTemplate bean 'jdbcTemplate': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute SQL script statement #1 of class path resource [procedures.sql]: CREATE OR REPLACE PROCEDURE create_booking( p_user_id BIGINT, p_tour_schedule_id BIGINT, p_pricae_at_booking NUMERIC(10,2) ) LANGUAGE plpgsql AS '
+BEGIN
+INSERT INTO bookings(
+    tour_schedule_id,
+    user_id,
+    booking_status_id,
+    price_at_booking
+)
+VALUES(
+          p_tour_schedule_id,
+          p_user_id,
+          1,
+      );
+END;'
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1382)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1221)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:229)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1762)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1651)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:764)
+	... 68 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jdbcTemplate' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/JdbcTemplateConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of JdbcTemplate bean 'jdbcTemplate': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute SQL script statement #1 of class path resource [procedures.sql]: CREATE OR REPLACE PROCEDURE create_booking( p_user_id BIGINT, p_tour_schedule_id BIGINT, p_pricae_at_booking NUMERIC(10,2) ) LANGUAGE plpgsql AS '
+BEGIN
+INSERT INTO bookings(
+    tour_schedule_id,
+    user_id,
+    booking_status_id,
+    price_at_booking
+)
+VALUES(
+          p_tour_schedule_id,
+          p_user_id,
+          1,
+      );
+END;'
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveBean(DefaultListableBeanFactory.java:1225)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1704)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1651)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:912)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 81 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute SQL script statement #1 of class path resource [procedures.sql]: CREATE OR REPLACE PROCEDURE create_booking( p_user_id BIGINT, p_tour_schedule_id BIGINT, p_pricae_at_booking NUMERIC(10,2) ) LANGUAGE plpgsql AS '
+BEGIN
+INSERT INTO bookings(
+    tour_schedule_id,
+    user_id,
+    booking_status_id,
+    price_at_booking
+)
+VALUES(
+          p_tour_schedule_id,
+          p_user_id,
+          1,
+      );
+END;'
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1817)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:309)
+	... 87 common frames omitted
+Caused by: org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of class path resource [procedures.sql]: CREATE OR REPLACE PROCEDURE create_booking( p_user_id BIGINT, p_tour_schedule_id BIGINT, p_pricae_at_booking NUMERIC(10,2) ) LANGUAGE plpgsql AS '
+BEGIN
+INSERT INTO bookings(
+    tour_schedule_id,
+    user_id,
+    booking_status_id,
+    price_at_booking
+)
+VALUES(
+          p_tour_schedule_id,
+          p_user_id,
+          1,
+      );
+END;'
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:293)
+	at org.springframework.jdbc.datasource.init.ResourceDatabasePopulator.populate(ResourceDatabasePopulator.java:254)
+	at org.springframework.jdbc.datasource.init.DatabasePopulatorUtils.execute(DatabasePopulatorUtils.java:54)
+	at org.springframework.boot.jdbc.init.DataSourceScriptDatabaseInitializer.runScripts(DataSourceScriptDatabaseInitializer.java:87)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.runScripts(AbstractScriptDatabaseInitializer.java:159)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.applyScripts(AbstractScriptDatabaseInitializer.java:120)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.applySchemaScripts(AbstractScriptDatabaseInitializer.java:109)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.initializeDatabase(AbstractScriptDatabaseInitializer.java:87)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.afterPropertiesSet(AbstractScriptDatabaseInitializer.java:77)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1864)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1813)
+	... 94 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ERROR: syntax error at or near ")"
+  Position: 335
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2875)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2560)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:429)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:526)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:436)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:358)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:343)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:319)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:314)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:261)
+	... 104 common frames omitted
+2026-03-11 21:47:18 [main] INFO  b.sysoev.tourApp.TourAppApplication - Starting TourAppApplication using Java 17.0.14 with PID 57528 (/Users/whitesmurf/Desktop/projects/tourApp/build/classes/java/main started by whitesmurf in /Users/whitesmurf/Desktop/projects/tourApp)
+2026-03-11 21:47:18 [main] INFO  b.sysoev.tourApp.TourAppApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-11 21:47:18 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-11 21:47:18 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-11 21:47:18 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-11 21:47:18 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-11 21:47:18 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@35cec305
+2026-03-11 21:47:18 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-11 21:47:19 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-03-11 21:47:19 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-03-11 21:47:19 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-03-11 21:47:19 [main] INFO  b.sysoev.tourApp.TourAppApplication - Started TourAppApplication in 1.614 seconds (process running for 1.775)
+2026-03-11 21:47:24 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-11 21:47:24 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

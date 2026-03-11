@@ -212,7 +212,7 @@ CREATE TABLE payment_status (
 CREATE TABLE payments (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     booking_id BIGINT NOT NULL,
-    payment_status_id INT NOT NULL,
+    payment_status_id INT NOT NULL DEFAULT 1,
     amount NUMERIC(10,2) NOT NULL CHECK (amount > 0),
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     -- имя ограничения связь оплаты и брони
