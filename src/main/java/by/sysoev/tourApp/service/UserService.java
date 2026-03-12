@@ -12,6 +12,7 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.Map;
 
 @Slf4j
@@ -23,12 +24,12 @@ public class UserService {
     private final AuthenticationManager authenticationManager;
     private final UserRepositoryImpl userRepository;
 
-    public String addUser(RegisterUserDTO registerUserDTO){
+    public Map<String,String> addUser(RegisterUserDTO registerUserDTO){
         userRepository.addUser(registerUserDTO);
         return authenticate(registerUserDTO.getUsername(), registerUserDTO.getPassword());
     }
 
-    public String loginUser(UserLoginDTO userLoginDTO ){
+    public Map<String,String> loginUser(UserLoginDTO userLoginDTO ){
        userRepository.getUserByEmail(userLoginDTO.getUsername()).orElseThrow(() -> new UsernameNotFoundException("Uncorrected email or password"));
         return authenticate(userLoginDTO.getUsername(),userLoginDTO.getPassword());
     }
@@ -36,7 +37,7 @@ public class UserService {
     private Map<String,String> authenticate(String username, String password) throws AuthenticationException {
         String token = null;
         String roles = null;
-        Map<>
+        Map<String,String> map = new HashMap<>();
 
         Authentication auth = authenticationManager
                 .authenticate(
@@ -46,7 +47,8 @@ public class UserService {
         if(auth.isAuthenticated()){
             token = jwtService.generateToken(username);
             roles = auth.getAuthorities().toString();
-
+            map.put("token", token);
+            map.put("roles",roles);
         }
 
         return map;

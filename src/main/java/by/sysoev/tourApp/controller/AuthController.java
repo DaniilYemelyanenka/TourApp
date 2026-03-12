@@ -30,9 +30,9 @@ public class AuthController {
     }
 
     @PostMapping("login")
-    public ResponseEntity<String> loginUser(@RequestBody UserLoginDTO userLoginDTO){
+    public ResponseEntity<Map<String,String>> loginUser(@RequestBody UserLoginDTO userLoginDTO){
         log.info("Request to login user");
-        String token = userService.loginUser(userLoginDTO);
-        return ResponseEntity.ok(token);
+        Map<String,String> tokenRoleMap = userService.loginUser(userLoginDTO);
+        return ResponseEntity.ok(tokenRoleMap);
     }
 }
