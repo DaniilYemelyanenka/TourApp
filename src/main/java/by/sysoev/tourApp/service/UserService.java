@@ -25,6 +25,7 @@ public class UserService {
     private final UserRepositoryImpl userRepository;
 
     public Map<String,String> addUser(RegisterUserDTO registerUserDTO){
+        log.debug("Adding user from user servicce");
         userRepository.addUser(registerUserDTO);
         return authenticate(registerUserDTO.getUsername(), registerUserDTO.getPassword());
     }
@@ -35,6 +36,7 @@ public class UserService {
     }
 
     private Map<String,String> authenticate(String username, String password) throws AuthenticationException {
+        log.debug("authenticated user from user service");
         String token = null;
         String roles = null;
         Map<String,String> map = new HashMap<>();
@@ -45,6 +47,7 @@ public class UserService {
                 );
 
         if(auth.isAuthenticated()){
+            log.debug("TOKEN: {}, ROLES: {}",token,roles);
             token = jwtService.generateToken(username);
             roles = auth.getAuthorities().toString();
             map.put("token", token);

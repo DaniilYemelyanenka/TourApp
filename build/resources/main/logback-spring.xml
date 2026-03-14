@@ -42,8 +42,6 @@
         <appender-ref ref="FILE"/>
     </root>
 
-    <logger name="by.sysoev" level="DEBUG"/>
-
     <logger name="org.springframework" level="WARN"/>
     <logger name="org.hibernate" level="WARN"/>
 

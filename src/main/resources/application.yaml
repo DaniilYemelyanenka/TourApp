@@ -23,7 +23,3 @@ backup:
 
 jwt:
   secret: L54OZNDg9xvTuB+kGTxzS+8QgZ6X6mQ0eGiM9MkYKPY=
-
-logging:
-  level:
-    org.springframework.security: DEBUG

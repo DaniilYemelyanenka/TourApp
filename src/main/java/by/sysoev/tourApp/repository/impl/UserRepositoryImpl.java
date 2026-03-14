@@ -25,6 +25,7 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public void addUser(RegisterUserDTO registerUserDTO) {
+        log.debug("addding user ad repository level");
         Long userId = jdbcTemplate.queryForObject(
                 "INSERT INTO users (first_name,last_name,email,phone,password_hash) VALUES (?,?,?,?,?) RETURNING id",
                 Long.class,

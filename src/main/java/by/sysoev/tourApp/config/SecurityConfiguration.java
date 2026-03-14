@@ -35,7 +35,7 @@ public class SecurityConfiguration {
                         .requestMatchers("/api/v1/client/**").hasRole("CLIENT")
                         .requestMatchers("/api/v1/tourOperator/**").hasRole("TOUR_OPERATOR")
                         .requestMatchers("/api/v1/admin/**").hasRole("ADMIN")
-                        .requestMatchers("/api/v1/auth**","/api/v1/ticket/**","/error").permitAll()
+                        .requestMatchers("/api/v1/auth/**","/api/v1/ticket/**","/error","/api/v1/tour/shortcut/tours").permitAll()
                         .anyRequest().authenticated())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
